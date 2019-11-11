@@ -2,9 +2,11 @@
   background-color: #282c34;
   display: flex;
   align-items: left;
+  justify-content: center;
+  min-width: 100%;
   font-size: calc(10px + 2vmin);
 }
 
-.triple-dash {
-  margin: 1% 0% 0% 2%;
+.navbar-menu {
+  min-width: 100%;
 }
