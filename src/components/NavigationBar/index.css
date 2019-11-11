@@ -1,0 +1,10 @@
+.navbar {
+  background-color: #282c34;
+  display: flex;
+  align-items: left;
+  font-size: calc(10px + 2vmin);
+}
+
+.triple-dash {
+  margin: 1% 0% 0% 2%;
+}

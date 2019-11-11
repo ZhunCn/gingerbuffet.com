@@ -1,15 +1,23 @@
 import React from 'react';
-import {Button, Header} from 'semantic-ui-react';
+import { Button, Header, Sidebar } from 'semantic-ui-react';
 import logo from '../../assets/logo.svg';
+import NavigationBar from '../../components/NavigationBar'
 import './index.css';
 
-function Home() {
+export default class Home extends React.Component {
+  render() {
     return (
-    <Header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Button> fomantic boi</Button>
-      </Header>
+      <div className='App-background'>
+        <Sidebar.Pushable as='segment'>
+          <NavigationBar />
+          <Header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+
+            <Button> random button</Button>
+          </Header>
+        </Sidebar.Pushable>
+      </div>
     );
+  }
 }
 
-export default Home;
