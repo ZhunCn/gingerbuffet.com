@@ -16,6 +16,10 @@ const holidaysCelebrated = [
   "Independence Day",
   "Thanksgiving Day", // Closed
   "Christmas Day"
+];
+
+const holidaysClosed = [
+  "Thanksgiving Day"
 ]
 
 export default class HolidayMessage extends React.Component {
@@ -45,7 +49,7 @@ export default class HolidayMessage extends React.Component {
       let currDay = currDate.getDate();
       let datesStr = [];
       let dates = [];
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 15; i++) {
         datesStr.push(new Date(currYear, currMonth, currDay, 0, 0, 0).toISOString().substring(0,10));
         dates.push(new Date(currYear, currMonth, currDay, 0, 0, 0));
         currDay++;
@@ -101,13 +105,13 @@ export default class HolidayMessage extends React.Component {
         <div />
       )
     }
-    if (this.state.holiday === holidaysCelebrated[5]) {
+    if (holidaysClosed.includes(this.state.holiday)) {
       return (
         <Message
         >
           <Message.Content>
             <Message.Header>
-              {this.state.holiday} Holiday Special
+              {this.state.holiday} Holiday Closing
               </Message.Header>
             <p>
               Happy {this.state.holiday}! We will be closed for the season on {this.state.date.toLocaleString().substring(0, 10)}!
@@ -125,7 +129,8 @@ export default class HolidayMessage extends React.Component {
             {this.state.holiday} Holiday Special
             </Message.Header>
           <p>
-            Happy {this.state.holiday}! We are hosting a special all-day holiday buffet for {holidayPricing}!
+            Happy {this.state.holiday}! On {this.state.date.toLocaleString().substring(0, 10)}
+            , We are hosting a special all-day holiday buffet for {holidayPricing}!
             </p>
         </Message.Content>
       </Message>
