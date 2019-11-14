@@ -1,6 +1,9 @@
 import React from 'react';
 import { Message } from 'semantic-ui-react';
 import Axios from 'axios';
+
+import Holidays from 'date-holidays';
+
 const holidayPricing = '$12.99';
 const corsBypass = 'https://cors-anywhere.herokuapp.com/'
 const calendarAPIURL = 'https://kayaposoft.com/enrico/json/v2.0?action=getHolidaysForDateRange'
@@ -16,95 +19,117 @@ const holidaysCelebrated = [
 ]
 
 export default class HolidayMessage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          holiday: null,
-          request: false
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      holiday: null,
+      date: null,
+      request: false
     }
+  }
 
-    componentWillMount() {
-      if (!this.state.request) {
-        let monthsInYear = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-        let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-        let currDate = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
-        currDate = new Date(currDate);
 
-        if (currDate.getFullYear() % 4 === 0) {
-          daysInMonth[1] = 29;
-        }
-        let currYear = currDate.getFullYear();
-        let currMonth = monthsInYear[currDate.getMonth()];
-        let currDay = currDate.getDate();
-        let lastMonth = monthsInYear[currDate.getMonth()];
-        let lastDay = currDate.getDate();
-        let lastYear = currDate.getFullYear();
+  componentWillMount() {
+    if (!this.state.request) {
+      let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-        for (let i = 0; i < 8; i++) {
-          lastDay++;
-          if (lastDay >= daysInMonth[currDate.getMonth()]) {
-            lastDay = 1;
-            if (currDate.getMonth() + 1 >= 12) {
-              lastYear++;
-              lastMonth = monthsInYear[0];
-            } else {
-              lastMonth = monthsInYear[currDate.getMonth() + 1]
-            }
+      let currDate = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+      currDate = new Date(currDate);
 
-          }
-        }
-        let currDayStr = currDay < 10 ? '0'+ String(currDay) : String(currDay);
-        let lastDayStr = lastDay < 10 ? '0'+ String(lastDay) : String(lastDay);
-
-        let toFromDateFormat = '&fromDate=14-11-2019&toDate=30-11-2019'
-        //let toFromDateFormat = '&fromDate=' + currDayStr + '-' + currMonth + '-' + String(currYear) + '&toDate=' + lastDayStr + '-' + lastMonth + '-' + String(lastYear);
-        let objRef = this;
-        
-        Axios.get(corsBypass + calendarAPIURL + toFromDateFormat + calendarAPIURL2, { crossdomain: true }).then(res => {
-          console.log('Received a response!')
-          console.log(res);
-          let holidays = res.data;
-          for (let i = 0; i < holidays.length; i++) {
-            if (holidaysCelebrated.includes(holidays[i]["name"][0]["text"])) {
-              objRef.setState({
-                holiday: holidays[i]["name"][0]["text"],
-                request: true
-              });
-              break;
-            }
-          }
-          
-
-        }).catch( err => {
-          console.log('Received an error!');
-          console.log(err);
-        });
+      if (currDate.getFullYear() % 4 === 0) {
+        daysInMonth[1] = 29;
       }
-    }
+      let currYear = currDate.getFullYear();
+      let currMonth = currDate.getMonth();
+      let currDay = currDate.getDate();
+      let datesStr = [];
+      let dates = [];
+      for (let i = 0; i < 30; i++) {
+        datesStr.push(new Date(currYear, currMonth, currDay, 0, 0, 0).toISOString().substring(0,10));
+        dates.push(new Date(currYear, currMonth, currDay, 0, 0, 0));
+        currDay++;
+        if (currDay >= daysInMonth[currDate.getMonth()]) {
+          currDay = 1;
+          if (currDate.getMonth() + 1 >= 12) {
+            currYear++;
+            currMonth = 0;
+          } else {
+            currMonth = currDate.getMonth() + 1;
+          }
 
+        }
+      }
+      let hd = new Holidays('us', 'il');
     
-
-    render() {
-      if (!this.state.holiday) {
-        return (
-          <div />
-        )
+      
+      let arr = hd.getHolidays(currDate.getFullYear());
+      console.log(arr);
+      console.log(dates);
+      for (let i = 0; i < arr.length; i++) {
+        if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {
+          this.setState({
+            holiday: arr[i].name,
+            date: dates[datesStr.indexOf(arr[i].date.substring(0,10))],
+            request: true
+          });
+          return;
+        }
       }
-        return (
+      if (currDate.getFullYear() != currYear) {
+        arr = hd.getHolidays(currYear);
+        for (let i = 0; i < arr.length; i++) {
+          if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {
+            this.setState({
+              holiday: arr[i].name,
+              date: dates[datesStr.indexOf(arr[i].date.substring(0,10))],
+              request: true
+            });
+            return;
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+  render() {
+    if (!this.state.holiday) {
+      return (
+        <div />
+      )
+    }
+    if (this.state.holiday === holidaysCelebrated[5]) {
+      return (
         <Message
-          >
-            <Message.Content>
+        >
+          <Message.Content>
             <Message.Header>
               {this.state.holiday} Holiday Special
-            </Message.Header>
+              </Message.Header>
             <p>
-              Happy {this.state.holiday}! We are hosting a special all-day holiday buffet for {holidayPricing}!
-            </p>
-            </Message.Content>
-          </Message>
-                    
-        );
+              Happy {this.state.holiday}! We will be closed for the season on {this.state.date.toLocaleString().substring(0, 10)}!
+              </p>
+          </Message.Content>
+        </Message>
+  
+      );
     }
+    return (
+      <Message
+      >
+        <Message.Content>
+          <Message.Header>
+            {this.state.holiday} Holiday Special
+            </Message.Header>
+          <p>
+            Happy {this.state.holiday}! We are hosting a special all-day holiday buffet for {holidayPricing}!
+            </p>
+        </Message.Content>
+      </Message>
+
+    );
+  }
 }
