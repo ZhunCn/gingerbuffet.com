@@ -6,13 +6,13 @@ import HolidayMessage from '../../components/HolidayMessage'
 import './index.css';
 
 
-export default class Home extends React.Component {
+export default class Menu extends React.Component {
   render() {
     return (
       <div className='App-background'>
-          <NavigationBar currentPage='home' />
+          <NavigationBar currentPage='menu' />
           <HolidayMessage />
-          Home Page
+          Menu Page
       </div>
     );
   }

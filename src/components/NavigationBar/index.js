@@ -1,14 +1,9 @@
 import React from 'react';
-import  {Link } from 'react-router-dom';
+import  { Link } from 'react-router-dom';
 import { Button, Header, Icon, Image, Segment, Sidebar, Menu } from 'semantic-ui-react';
 import './index.css';
 import logo from '../../assets/gingerlogo.png'
 export default class NavigationBar extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
-    
 
     render() {
         return (
@@ -22,15 +17,15 @@ export default class NavigationBar extends React.Component {
                         <Menu.Item as={Link} to={'/'}>
                             <Image size='small' src={logo}></Image>
                         </Menu.Item>
-                        <Menu.Item as={Link} to={'/'}>
+                        <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
                             <Icon name='home' />
                             Home
                         </Menu.Item>
-                        <Menu.Item as={Link} to={'/menu'}>
+                        <Menu.Item as={Link} to={'/menu'} active={this.props.currentPage === 'menu'}>
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
-                        <Menu.Item as={Link} to={'/location'}>
+                        <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
                             Location
                         </Menu.Item>
