@@ -70,6 +70,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
+    "postbuild": "react-snap",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -92,7 +93,8 @@
     "fomantic-ui-less": "^2.7.8",
     "gh-pages": "^2.1.1",
     "less": "^3.10.3",
-    "less-loader": "^5.0.0"
+    "less-loader": "^5.0.0",
+    "react-snap": "^1.23.0"
   },
   "jest": {
     "roots": [

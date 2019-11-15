@@ -8,7 +8,7 @@ export default class PageNotFound extends React.Component {
     return (
       <div className='App-background'>
           <NavigationBar currentPage='' />
-          No page here
+          404 error! No page found here!
       </div>
     );
   }
