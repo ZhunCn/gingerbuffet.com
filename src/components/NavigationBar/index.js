@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Responsive, Icon, Image, Menu } from 'semantic-ui-react';
+import { Responsive, Icon, Image, Menu, Transition } from 'semantic-ui-react';
 import './index.css';
 import logo from '../../assets/gingerlogo.png'
 export default class NavigationBar extends React.Component {
@@ -32,6 +32,7 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item as={Link} to={'/'}>
                         <Image size='small' src={logo}></Image>
                     </Menu.Item>
+                    <Menu.Menu >
                     <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
                         <Icon name='home' />
                         Home
@@ -44,17 +45,18 @@ export default class NavigationBar extends React.Component {
                         <Icon name='map marked alternate' />
                         Location
             </Menu.Item>
+            </Menu.Menu>
 
                 </Responsive>
                 <Responsive
-                    as={Menu}
                     {...Responsive.onlyMobile}
-
+                    >
+                <Menu
                     fluid
                     inverted
                     pointing
                     secondary
-
+                    borderless={!this.state.visible}
                     className='navbar-menu'
                 >
                     <Menu.Item as={Link} to={'/'}>
@@ -63,7 +65,15 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item position='right' onClick={() => this.setVisibility()}>
                         <Icon name='bars' />
                     </Menu.Item>
-                    {this.state.visible && <div>
+                    
+                </Menu>
+                <Transition.Group animation={'fade down'} duration={{hide: 200, show: 400}}>
+                {this.state.visible && <Menu
+                    fluid
+                    inverted
+                    pointing
+                    secondary
+                    stackable>
                         <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
                             <Icon name='home' />
                             Home
@@ -76,8 +86,8 @@ export default class NavigationBar extends React.Component {
                             <Icon name='map marked alternate' />
                             Location
                         </Menu.Item>
-                    </div>}
-
+                    </Menu>}
+                    </Transition.Group>
                 </Responsive>
             </div>
 
