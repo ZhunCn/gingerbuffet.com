@@ -1,13 +1,9 @@
 import React from 'react';
 import { Message } from 'semantic-ui-react';
-import Axios from 'axios';
 
 import Holidays from 'date-holidays';
 
 const holidayPricing = '$12.99';
-const corsBypass = 'https://cors-anywhere.herokuapp.com/'
-const calendarAPIURL = 'https://kayaposoft.com/enrico/json/v2.0?action=getHolidaysForDateRange'
-const calendarAPIURL2 = '&country=usa&region=il&holidayType=public_holiday'
 const holidaysCelebrated = [
   "New Year's Day",
   "Valentine's Day",
@@ -34,7 +30,7 @@ export default class HolidayMessage extends React.Component {
 
 
 
-  componentWillMount() {
+  componentDidMount() {
     if (!this.state.request) {
       let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -68,8 +64,6 @@ export default class HolidayMessage extends React.Component {
     
       
       let arr = hd.getHolidays(currDate.getFullYear());
-      console.log(arr);
-      console.log(dates);
       for (let i = 0; i < arr.length; i++) {
         if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {
           this.setState({
@@ -80,7 +74,7 @@ export default class HolidayMessage extends React.Component {
           return;
         }
       }
-      if (currDate.getFullYear() != currYear) {
+      if (currDate.getFullYear() !== currYear) {
         arr = hd.getHolidays(currYear);
         for (let i = 0; i < arr.length; i++) {
           if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {

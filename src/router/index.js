@@ -1,17 +1,18 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "../containers/HomePage";
 import Menu from "../containers/MenuPage";
-import Location from '../containers/LocationPage'
+import Location from '../containers/LocationPage';
+import PageNotFound from '../containers/PageNotFoundPage'
 
-function Router() {
+const Router = () => {
     return (
       <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/menu" component={Menu} />
         <Route path="/location" component={Location} />
-        <Route path="*" render={() => <Redirect to="/" />} />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </BrowserRouter>
     );
