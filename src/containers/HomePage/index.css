@@ -9,6 +9,11 @@
   height: 40vmin;
 }
 
+.content {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .App-header {
   background-color: #282c34;
   display: flex;

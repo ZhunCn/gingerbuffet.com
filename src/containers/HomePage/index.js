@@ -1,7 +1,9 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
+import { Segment } from 'semantic-ui-react'
 import './index.css';
+import Footer from '../../components/Footer'
 
 
 export default class Home extends React.Component {
@@ -10,7 +12,12 @@ export default class Home extends React.Component {
       <div className='App-background'>
           <NavigationBar currentPage='home' />
           <HolidayMessage />
-          Home Page
+          <div className='content'>
+          <Segment>
+            Home Page
+          </Segment>
+          <Footer currentPage='home'/>
+          </div>
       </div>
     );
   }

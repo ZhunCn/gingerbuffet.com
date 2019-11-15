@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import './index.css';
+import Footer from '../../components/Footer'
 
 
 export default class Menu extends React.Component {
@@ -11,6 +12,8 @@ export default class Menu extends React.Component {
           <NavigationBar currentPage='menu' />
           <HolidayMessage />
           Menu Page
+          <Footer currentPage='menu' />
+
       </div>
     );
   }

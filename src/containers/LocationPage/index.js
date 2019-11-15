@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import './index.css';
+import Footer from '../../components/Footer'
 
 
 export default class Location extends React.Component {
@@ -11,6 +12,7 @@ export default class Location extends React.Component {
           <NavigationBar currentPage='location' />
           <HolidayMessage />
           Location Page
+          <Footer currentPage='location' />
       </div>
     );
   }
