@@ -1,4 +1,4 @@
-Builds can be found at [https://ZhunCn.github.io/gingerbuffet.com/](https://ZhunCn.github.io/gingerbuffet.com/)
+Development Version Deployments can be found at [https://new.gingerbuffet.com/](https://new.gingerbuffet.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
