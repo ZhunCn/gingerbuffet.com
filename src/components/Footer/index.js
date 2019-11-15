@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Responsive, Icon, Image, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import './index.css';
-import logo from '../../assets/gingerlogo.png'
 export default class Footer extends React.Component {
 
     constructor(props) {

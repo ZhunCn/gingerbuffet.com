@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Responsive, Icon, Image, Menu } from 'semantic-ui-react';
+import { Responsive, Icon, Image, Menu } from 'semantic-ui-react';
 import './index.css';
 import logo from '../../assets/gingerlogo.png'
 export default class NavigationBar extends React.Component {
