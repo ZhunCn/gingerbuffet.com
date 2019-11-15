@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import './index.css';
+
+/**
+ * TODO: Change to List with Vertical Alignment to Center
+ * Include About Us?
+ */
+
 export default class Footer extends React.Component {
 
     constructor(props) {

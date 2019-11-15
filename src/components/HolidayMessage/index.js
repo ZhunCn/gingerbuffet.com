@@ -1,6 +1,5 @@
 import React from 'react';
 import { Message } from 'semantic-ui-react';
-
 import Holidays from 'date-holidays';
 
 const holidayPricing = '$12.99';
