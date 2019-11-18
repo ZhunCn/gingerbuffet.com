@@ -63,7 +63,7 @@ export default class NavigationBar extends React.Component {
                         <Image size='small' src={logo}></Image>
                     </Menu.Item>
                     <Menu.Item position='right' onClick={() => this.setVisibility()}>
-                        <Icon name='bars' />
+                        <Icon name='bars' size='big' />
                     </Menu.Item>
                     
                 </Menu>
