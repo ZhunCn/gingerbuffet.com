@@ -19,8 +19,9 @@ export default class Home extends React.Component {
           <Segment>
             Home Page
           </Segment>
-          <Footer currentPage='home'/>
           </div>
+          <Footer currentPage='home'/>
+
       </div>
     );
   }
