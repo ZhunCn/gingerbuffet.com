@@ -20,11 +20,13 @@ export default class Location extends React.Component {
       url={mapAPIURL + API_KEY + locationQuery}
       width='100%'
       height='450vh'
+      className='roundElement'
     />;
     const mapMobileIFrame = <Iframe
       url={mapAPIURL + API_KEY + locationQuery}
       width='100%'
-      height='200vh'
+      height='250vh'
+      className='roundElement'
     />;
 
     const businessAddress = <Segment>

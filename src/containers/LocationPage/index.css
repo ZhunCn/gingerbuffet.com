@@ -28,3 +28,7 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.roundElement	{
+	border-radius: 5px;
+}
