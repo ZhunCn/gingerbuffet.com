@@ -13,16 +13,18 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className='App-background'>
+
           <NavigationBar currentPage='home' />
-          <HolidayMessage />
+
+          
           <div className='content'>
+          <HolidayMessage />
           <Segment>
             Home Page
           </Segment>
           </div>
           <Footer currentPage='home'/>
-
-      </div>
+          </div>
     );
   }
 }
