@@ -19,8 +19,9 @@ export default class Location extends React.Component {
     return (
       <div className='App-background'>
           <NavigationBar currentPage='location' />
-          <HolidayMessage />
           <div className='content'>
+          <HolidayMessage />
+
           <Grid divided='vertically'>
             <Grid.Row columns={2}>
               <Grid.Column>
