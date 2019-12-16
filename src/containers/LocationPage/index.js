@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import Iframe from 'react-iframe';
-import { Divider, Container, Grid, Segment, Header, Responsive } from 'semantic-ui-react';
+import { Divider, Grid, Segment, Header, Responsive } from 'semantic-ui-react';
 import './index.css';
 import Footer from '../../components/Footer'
 
@@ -35,64 +35,78 @@ export default class Location extends React.Component {
 
     const businessAddress = <Segment>
       <Header>
-       Contact Information for Ginger Buffet and Grill
+        Information about Ginger Buffet and Grill
       </Header>
-      <Divider/>
+      <Divider />
 
       53 Ludwig Drive <br />
       Suite #102 <br />
       Fairview Heights, IL 62208<br />
       <p>
-      Phone Number: (618)-398-3888</p>
-      </Segment>;
+        Phone Number: (618)-398-3888</p>
+    </Segment>;
 
     const businessHours =
       <Segment>
         <Header>
           Business Hours
       </Header>
-      <Divider/>
+        <Divider />
 
         <p><Header sub>Sunday - Thursday </Header>
-        11:00 AM  -  9:00 PM</p><p>
-      <Header sub> Friday and Saturday</Header>
-        11:00 AM  -  9:30 PM
+          11:00 AM  -  9:00 PM</p><p>
+          <Header sub> Friday and Saturday</Header>
+          11:00 AM  -  9:30 PM
         </p>
       </Segment>;
     ;
     const square = { width: 175, height: 175 }
-    const bottomDetails = <Segment>
+    const bottomDetails = <>
+      <Segment>
+        <Header sub>Lunch Buffet: </Header>
+        <b>{lunchPrice}</b>
+        <Divider />
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+        <br/><br/>
+        </Responsive>
+        Monday - Friday <br /> 11:00 AM - 3:30 PM
+          </Segment>
+          
+      <Segment>
+        <Header sub>Dinner Buffet:
+
+           </Header>
+        <b>{dinnerPrice} </b>
+        <Divider />
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+        <br/><br/>
+        </Responsive>
+        Monday - Thursday <br /> 3:30 PM - 9:00 PM
+          </Segment>
+      <Segment>
+        <Header sub>Weekend Buffet: </Header>
+        <b>{weekendPrice} </b>
+        <Divider />
+
+        Friday <br /> 3:30 PM - 9:30 PM <br />
+        Saturday <br /> 11:00 AM - 9:30 PM <br />
+        Sunday <br /> 11:00 AM - 9:00 PM
+          </Segment></>
+    ;
+    const bottomDetailsDesktop = <Segment>
       <Header>
         Buffet Prices
         </Header>
-      <Segment.Group horizontal>
-        <Segment>
-          <Header sub>Lunch Buffet: </Header>
-          <b>{lunchPrice}</b>
-          <Divider />
-          <br /> <br />
-          Monday - Friday <br /> 11:00 AM - 3:30 PM
-          </Segment>
-        <Segment>
-          <Header sub>Dinner Buffet:
-
-           </Header>
-          <b>{dinnerPrice} </b>
-          <Divider />
-          <br /> <br />
-          Monday - Thursday <br /> 3:30 PM - 9:00 PM
-          </Segment>
-        <Segment>
-          <Header sub>Weekend Buffet: </Header>
-          <b>{weekendPrice} </b>
-          <Divider />
-
-          Friday <br /> 3:30 PM - 9:30 PM <br />
-          Saturday <br /> 11:00 AM - 9:30 PM <br />
-          Sunday <br /> 11:00 AM - 9:00 PM
-          </Segment>
+      <Segment.Group horizontal raised>
+        {bottomDetails}
       </Segment.Group>
-    </Segment>
+    </Segment>;
+    const bottomDetailsMobile = <Segment>
+      <Header>
+        Buffet Prices
+    </Header>
+        {bottomDetails}
+    </Segment>;
     return (
       <div className='App-background'>
         <NavigationBar currentPage='location' />
@@ -112,10 +126,10 @@ export default class Location extends React.Component {
                       </Grid.Column>
                       <Grid.Column stretched width={6}>
                         {businessHours}
-                        </Grid.Column>
+                      </Grid.Column>
                     </Grid.Row>
                   </Grid>
-                  {bottomDetails}
+                  {bottomDetailsDesktop}
                 </Grid.Column>
                 <Grid.Column>
                   {mapDesktopIFrame}
@@ -125,19 +139,11 @@ export default class Location extends React.Component {
           </Responsive>
 
           <Responsive {...Responsive.onlyMobile} >
-          <Grid divided='vertically'>
-                    <Grid.Row columns={2}>
-                      <Grid.Column stretched width={10}>
-                        {businessAddress}
-                      </Grid.Column>
-                      <Grid.Column stretched width={6}>
-                        {businessHours}
-                        </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
+            {businessAddress}
 
             {mapMobileIFrame}
-            {bottomDetails}
+            {businessHours}
+            {bottomDetailsMobile}
           </Responsive>
         </div>
 
