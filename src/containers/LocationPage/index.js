@@ -90,8 +90,8 @@ export default class Location extends React.Component {
         Friday <br /> 3:30 PM - 9:30 PM <br />
         Saturday <br /> 11:00 AM - 9:30 PM <br />
         Sunday <br /> 11:00 AM - 9:00 PM
-          </Segment></>
-    ;
+          </Segment></>;
+    
     const bottomDetailsDesktop = <Segment>
       <Header>
         Buffet Prices
@@ -99,6 +99,7 @@ export default class Location extends React.Component {
       <Segment.Group horizontal raised>
         {bottomDetails}
       </Segment.Group>
+      <b>Senior and Military Discount Available on Request. Senior Special Day on Wednesdays.</b>
 
     </Segment>;
     const bottomDetailsMobile = <Segment>
@@ -106,7 +107,11 @@ export default class Location extends React.Component {
         Buffet Prices
     </Header>
         {bottomDetails}
+        <b>Senior and Military Discount Available on Request.<br/>Senior Special Day on Wednesdays.</b>
     </Segment>;
+
+
+
     return (
       <div className='App-background'>
         <NavigationBar currentPage='location' />

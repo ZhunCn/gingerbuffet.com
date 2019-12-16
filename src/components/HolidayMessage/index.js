@@ -122,8 +122,8 @@ export default class HolidayMessage extends React.Component {
             {this.state.holiday} Holiday Special
             </Message.Header>
           <p>
-            Happy {this.state.holiday}! On {this.state.date.toLocaleString().substring(0, 10)}
-            , We are hosting a special all-day holiday buffet for {holidayPricing}!
+            Happy {this.state.holiday}! On {this.state.date.toLocaleString().substring(0, this.state.date.toLocaleString().indexOf(','))}
+            , We are hosting a special all-day holiday buffet for <b>{holidayPricing}</b>!
             </p>
         </Message.Content>
       </Message>
