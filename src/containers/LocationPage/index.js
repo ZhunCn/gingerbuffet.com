@@ -60,7 +60,6 @@ export default class Location extends React.Component {
         </p>
       </Segment>;
     ;
-    const square = { width: 175, height: 175 }
     const bottomDetails = <>
       <Segment>
         <Header sub>Lunch Buffet: </Header>
@@ -100,6 +99,7 @@ export default class Location extends React.Component {
       <Segment.Group horizontal raised>
         {bottomDetails}
       </Segment.Group>
+
     </Segment>;
     const bottomDetailsMobile = <Segment>
       <Header>
@@ -118,7 +118,7 @@ export default class Location extends React.Component {
 
             <Grid divided='vertically'>
               <Grid.Row columns={2}>
-                <Grid.Column>
+                <Grid.Column stretched>
                   <Grid divided='vertically'>
                     <Grid.Row columns={2}>
                       <Grid.Column stretched width={10}>
@@ -131,7 +131,7 @@ export default class Location extends React.Component {
                   </Grid>
                   {bottomDetailsDesktop}
                 </Grid.Column>
-                <Grid.Column>
+                <Grid.Column stretched>
                   {mapDesktopIFrame}
                 </Grid.Column>
               </Grid.Row>
@@ -142,8 +142,9 @@ export default class Location extends React.Component {
             {businessAddress}
 
             {mapMobileIFrame}
-            {businessHours}
             {bottomDetailsMobile}
+            {businessHours}
+            
           </Responsive>
         </div>
 

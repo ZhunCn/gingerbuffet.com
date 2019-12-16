@@ -24,6 +24,7 @@ export default class Footer extends React.Component {
 
     render() {
         return (
+            <div>
             <div className='invisible'>
                 <Menu
                     size='mini'
@@ -44,6 +45,8 @@ export default class Footer extends React.Component {
 
                 
             </Menu>
+            </div>
+            
             </div>
         );
     }
