@@ -1,9 +1,11 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Tab } from 'semantic-ui-react';
+import { Tab, Image } from 'semantic-ui-react';
 import './index.css';
 import Footer from '../../components/Footer'
+import menuTop from '../../assets/ginger-menu-top.png';
+import menuBottom from '../../assets/ginger-menu-bottom.png';
 
 /**
  * TODO: Add Take-out/Carry-out Menu with Prices, extracting the information on a csv/xml/json file.
@@ -31,13 +33,17 @@ export default class Menu extends React.Component {
           <NavigationBar currentPage='menu' />
           <div className='content'>
           <HolidayMessage />
-          <Tab menu={{ pointing: true }} panes={panes} />
+          <Image.Group>
+            <Image src={menuTop} />
+            <Image src={menuBottom} />
+          </Image.Group>
 
           </div>
           <Footer currentPage='menu' />
 
       </div>
     );
+    //<Tab menu={{ pointing: true }} panes={panes} />
   }
 }
 
