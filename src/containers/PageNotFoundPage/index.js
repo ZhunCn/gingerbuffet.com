@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import './index.css';
+import { Segment } from 'semantic-ui-react'
 
 
 export default class PageNotFound extends React.Component {
@@ -8,7 +9,7 @@ export default class PageNotFound extends React.Component {
     return (
       <div className='App-background'>
           <NavigationBar currentPage='' />
-          404 error! No page found here!
+          <Segment size='large' raised>404 error! No page found here!</Segment>
       </div>
     );
   }

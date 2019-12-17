@@ -100,7 +100,7 @@ export default class HolidayMessage extends React.Component {
     }
     if (holidaysClosed.includes(this.state.holiday)) {
       return (
-        <Message
+        <Message color='violet'
         >
           <Message.Content>
             <Message.Header>
@@ -115,7 +115,7 @@ export default class HolidayMessage extends React.Component {
       );
     }
     return (
-      <Message
+      <Message color='violet'
       >
         <Message.Content>
           <Message.Header>
