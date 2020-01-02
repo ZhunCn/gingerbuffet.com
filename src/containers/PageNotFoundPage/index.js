@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
-import './index.css';
+import '../../assets/styles.css';
 import { Segment } from 'semantic-ui-react'
 
 

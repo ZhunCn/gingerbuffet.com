@@ -23,6 +23,7 @@
   color: #09d3ac;
 }
 
+
 .content {
   margin-top: 10px;
   margin-left: 10px;
@@ -31,4 +32,8 @@
 
 .roundElement	{
 	border-radius: 5px;
+}
+
+.navbar-menu {
+  background-color: #4056a1;
 }

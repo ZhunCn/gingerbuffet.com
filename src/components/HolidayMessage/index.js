@@ -107,7 +107,7 @@ export default class HolidayMessage extends React.Component {
               {this.state.holiday} Holiday Closing
               </Message.Header>
             <p>
-              Happy {this.state.holiday}! We will be closed for the season on {this.state.date.toLocaleString().substring(0, 10)}!
+              Happy {this.state.holiday}! We will be closed for the season on {this.state.date.toLocaleString().substring(0, this.state.date.toLocaleString().indexOf(','))}!
               </p>
           </Message.Content>
         </Message>

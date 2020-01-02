@@ -45,6 +45,11 @@ export default class NavigationBar extends React.Component {
                         <Icon name='map marked alternate' />
                         Location and Buffet Prices/Hours
             </Menu.Item>
+            <Menu.Item >
+                        
+            <Icon name='phone' />
+                <b>(618)-398-3888</b>
+                 </Menu.Item>
             </Menu.Menu>
 
                 </Responsive>
@@ -62,6 +67,12 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item as={Link} to={'/'}>
                         <Image size='small' src={logo}></Image>
                     </Menu.Item>
+                    <Menu.Item className='navbar-item-center'>
+                        
+            <Icon name='phone' />
+                <b>(618)-398-3888</b> <br/><br/><br/>
+                 </Menu.Item>
+
                     <Menu.Item position='right' onClick={() => this.setVisibility()}>
                         <Icon name='bars' size='big' />
                     </Menu.Item>
@@ -74,6 +85,8 @@ export default class NavigationBar extends React.Component {
                     pointing
                     secondary
                     stackable>
+                        
+                        
                         <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
                             <Icon name='home' />
                             Home

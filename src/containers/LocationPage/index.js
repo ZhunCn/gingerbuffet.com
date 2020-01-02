@@ -3,7 +3,7 @@ import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import Iframe from 'react-iframe';
 import { Divider, Grid, Segment, Header, Responsive } from 'semantic-ui-react';
-import './index.css';
+import '../../assets/styles.css';
 import Footer from '../../components/Footer'
 
 const mapAPIURL = 'https://www.google.com/maps/embed/v1/place?key='
@@ -43,7 +43,7 @@ export default class Location extends React.Component {
       Suite #102 <br />
       Fairview Heights, IL 62208<br />
       <p>
-        Phone Number: (618)-398-3888</p>
+        <b>Phone Number: (618)-398-3888</b></p>
     </Segment>;
 
     const businessHours =

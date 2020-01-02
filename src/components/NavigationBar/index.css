@@ -5,3 +5,11 @@
 .navbar-menu {
   min-width: 100%;
 }
+
+.navbar-item-center {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

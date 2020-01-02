@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import { Segment } from 'semantic-ui-react'
-import './index.css';
+import '../../assets/styles.css';
 import Footer from '../../components/Footer'
 
 /**

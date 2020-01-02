@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import { Tab, Image } from 'semantic-ui-react';
-import './index.css';
+import '../../assets/styles.css';
 import Footer from '../../components/Footer'
 import menuTop from '../../assets/ginger-menu-top.png';
 import menuBottom from '../../assets/ginger-menu-bottom.png';
@@ -14,6 +14,7 @@ import menuBottom from '../../assets/ginger-menu-bottom.png';
 
 export default class Menu extends React.Component {
   render() {
+    // eslint-disable-next-line
     const panes = [
       {
         menuItem: 'Appetizers',
