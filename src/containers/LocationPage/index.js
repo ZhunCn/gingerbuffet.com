@@ -4,6 +4,7 @@ import HolidayMessage from '../../components/HolidayMessage'
 import Iframe from 'react-iframe';
 import { Divider, Grid, Segment, Header, Responsive } from 'semantic-ui-react';
 import '../../assets/styles.css';
+import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
 
 const mapAPIURL = 'https://www.google.com/maps/embed/v1/place?key='
@@ -114,6 +115,9 @@ export default class Location extends React.Component {
 
     return (
       <div className='App-background'>
+        <Helmet>
+          <title>Location and Hours - Ginger Buffet & Grill</title>
+        </Helmet>
         <NavigationBar currentPage='location' />
         <div className='content'>
 
@@ -122,10 +126,10 @@ export default class Location extends React.Component {
 
 
             <Grid divided='vertically'>
-              <Grid.Row columns={2}>
+              <Grid.Row columns={2} stretched>
                 <Grid.Column stretched>
                   <Grid divided='vertically'>
-                    <Grid.Row columns={2}>
+                    <Grid.Row columns={2} stretched>
                       <Grid.Column stretched width={10}>
                         {businessAddress}
                       </Grid.Column>

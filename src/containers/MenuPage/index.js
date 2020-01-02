@@ -3,7 +3,8 @@ import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import { Tab, Image } from 'semantic-ui-react';
 import '../../assets/styles.css';
-import Footer from '../../components/Footer'
+import { Helmet } from 'react-helmet';
+import Footer from '../../components/Footer';
 import menuTop from '../../assets/ginger-menu-top.png';
 import menuBottom from '../../assets/ginger-menu-bottom.png';
 
@@ -31,12 +32,16 @@ export default class Menu extends React.Component {
     ];
     return (
       <div className='App-background'>
+        <Helmet>
+          <title>Menu - Ginger Buffet & Grill</title>
+        </Helmet>
           <NavigationBar currentPage='menu' />
           <div className='content'>
           <HolidayMessage />
-          <Image.Group>
-            <Image src={menuTop} />
-            <Image src={menuBottom} />
+          <Image.Group className='menu-pics'>
+            <Image src={menuTop} fluid />
+            <br/>
+            <Image src={menuBottom} fluid />
           </Image.Group>
 
           </div>
