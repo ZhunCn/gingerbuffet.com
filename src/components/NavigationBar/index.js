@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Responsive, Icon, Image, Menu, Transition } from 'semantic-ui-react';
 import './index.css';
 import logo from '../../assets/gingerlogo.png'
+
+const fbPageLink = 'https://www.facebook.com/GingerBuffet';
+
 export default class NavigationBar extends React.Component {
 
     constructor(props) {
@@ -44,6 +47,10 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                         <Icon name='map marked alternate' />
                         Location and Buffet Prices/Hours
+            </Menu.Item>
+            <Menu.Item href={fbPageLink}>
+                <Icon name='facebook square' />
+                Facebook Page
             </Menu.Item>
             <Menu.Item >
                         
@@ -98,6 +105,10 @@ export default class NavigationBar extends React.Component {
                         <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
                             Location and Buffet Prices/Hours
+                        </Menu.Item>
+                        <Menu.Item href={fbPageLink}>
+                            <Icon name='facebook square' />
+                            Facebook Page
                         </Menu.Item>
                     </Menu>}
                     </Transition.Group>
