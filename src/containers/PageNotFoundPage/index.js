@@ -13,7 +13,9 @@ export default class PageNotFound extends React.Component {
           <title>404 Error - Ginger Buffet & Grill</title>
         </Helmet>
         <NavigationBar currentPage='' />
-        <Segment size='large' raised>404 error! No page found here!</Segment>
+        <div className='content'>
+          <Segment size='large' raised>404 error! This page was not found!</Segment>
+        </div>
       </div>
     );
   }
