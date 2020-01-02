@@ -68,7 +68,6 @@ export default class NavigationBar extends React.Component {
                     inverted
                     pointing
                     secondary
-                    borderless={!this.state.visible}
                     className='navbar-menu'
                 >
                     <Menu.Item as={Link} to={'/'}>
@@ -77,11 +76,11 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item className='navbar-item-center'  href='tel:+1618-398-3888'>
                         
             <Icon name='phone' />
-                <b>(618)-398-3888</b> <br/><br/><br/>
+                <b>(618)-398-3888</b> <br/><br/><br/><br/>
                  </Menu.Item>
 
-                    <Menu.Item position='right' onClick={() => this.setVisibility()}>
-                        <Icon name='bars' size='big' />
+                    <Menu.Item className='navbar-item-center' position='right' onClick={() => this.setVisibility()}>
+                        <Icon name='bars' size='big' /> <br/><br/><br/><br/>
                     </Menu.Item>
                     
                 </Menu>
