@@ -42,3 +42,11 @@
   padding-left: 10%;
   padding-right: 10%;
 }
+
+.no-link-color {
+  color:inherit;
+}
+
+.no-link-color:hover {
+  color:inherit;
+}

@@ -44,7 +44,7 @@ export default class Location extends React.Component {
       Suite #102 <br />
       Fairview Heights, IL 62208<br />
       <p>
-        <b>Phone Number: (618)-398-3888</b></p>
+        <b>Phone Number: <a class='no-link-color' href='tel:+1618-398-3888'>(618)-398-3888</a></b></p>
     </Segment>;
 
     const businessHours =

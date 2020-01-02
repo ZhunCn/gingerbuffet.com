@@ -52,7 +52,7 @@ export default class NavigationBar extends React.Component {
                 <Icon name='facebook square' />
                 Facebook Page
             </Menu.Item>
-            <Menu.Item >
+            <Menu.Item href='tel:+1618-398-3888'>
                         
             <Icon name='phone' />
                 <b>(618)-398-3888</b>
@@ -74,7 +74,7 @@ export default class NavigationBar extends React.Component {
                     <Menu.Item as={Link} to={'/'}>
                         <Image size='small' src={logo}></Image>
                     </Menu.Item>
-                    <Menu.Item className='navbar-item-center'>
+                    <Menu.Item className='navbar-item-center'  href='tel:+1618-398-3888'>
                         
             <Icon name='phone' />
                 <b>(618)-398-3888</b> <br/><br/><br/>
