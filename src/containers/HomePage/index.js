@@ -24,6 +24,7 @@ export default class Home extends React.Component {
           <HolidayMessage />
           <Header
       as="h1"
+      color='red'
       content="Welcome to Ginger Buffet and Grill"
       inverted
       style={{

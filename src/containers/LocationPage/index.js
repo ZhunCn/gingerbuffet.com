@@ -100,7 +100,7 @@ export default class Location extends React.Component {
       <Segment.Group horizontal raised>
         {bottomDetails}
       </Segment.Group>
-      <b>Senior, Military, and Children Discount Available. Senior Special Day on Wednesdays.</b>
+      <b>Senior, Active Military, and Children Buffet Dine-in Discount Available. Senior Special Day on Wednesdays.</b>
 
     </Segment>;
     const bottomDetailsMobile = <Segment>
@@ -108,7 +108,7 @@ export default class Location extends React.Component {
         Buffet Prices
     </Header>
         {bottomDetails}
-        <b>Senior, Military, and Children Discount Available.<br/>Senior Special Day on Wednesdays.</b>
+        <b>Senior, Active Military, and Children Buffet<br/> Dine-in Discount Available.<br/><hr/>Senior Special Day on Wednesdays.</b>
     </Segment>;
 
 
