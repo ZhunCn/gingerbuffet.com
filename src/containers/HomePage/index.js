@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Segment } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
@@ -13,7 +14,7 @@ import Footer from '../../components/Footer'
 export default class Home extends React.Component {
   render() {
     return (
-      <div className='App-background'>
+      <div className='deskBackground'>
         <Helmet>
           <title>Home - Ginger Buffet & Grill</title>
         </Helmet>
@@ -22,12 +23,23 @@ export default class Home extends React.Component {
           
           <div className='content'>
           <HolidayMessage />
-          <Segment>
-            Home Page
-          </Segment>
+          <Header
+      as="h1"
+      content="Welcome to Ginger Buffet and Grill"
+      inverted
+      style={{
+        fontSize:  "4em",
+        fontWeight: "normal",
+        marginBottom: 0,
+        marginTop:  "2.3em",
+        'text-shadow': '2px 2px black'
+      }}
+    />
           </div>
           <Footer currentPage='home'/>
           </div>
+          
+          
     );
   }
 }

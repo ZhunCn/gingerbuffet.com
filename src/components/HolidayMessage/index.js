@@ -54,7 +54,7 @@ export default class HolidayMessage extends React.Component {
             currYear++;
             currMonth = 0;
           } else {
-            currMonth = currDate.getMonth() + 1;
+            currMonth = currMonth + 1;
           }
 
         }
