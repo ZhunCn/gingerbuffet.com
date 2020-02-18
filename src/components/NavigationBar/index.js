@@ -48,7 +48,7 @@ export default class NavigationBar extends React.Component {
                         <Icon name='map marked alternate' />
                         Location and Buffet Prices/Hours
             </Menu.Item>
-            <Menu.Item href={fbPageLink}>
+            <Menu.Item href={fbPageLink} target="_blank">
                 <Icon name='facebook square' />
                 Facebook Page
             </Menu.Item>
@@ -105,7 +105,7 @@ export default class NavigationBar extends React.Component {
                             <Icon name='map marked alternate' />
                             Location and Buffet Prices/Hours
                         </Menu.Item>
-                        <Menu.Item href={fbPageLink}>
+                        <Menu.Item href={fbPageLink} target="_blank">
                             <Icon name='facebook square' />
                             Facebook Page
                         </Menu.Item>
