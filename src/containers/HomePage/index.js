@@ -24,14 +24,14 @@ export default class Home extends React.Component {
           <HolidayMessage />
           <Header
       as="h1"
-      color='red'
       content="Welcome to Ginger Buffet and Grill"
       inverted
       style={{
+        color: "#BD0D1D",
         fontSize:  "4em",
         fontWeight: "normal",
         marginBottom: 0,
-        marginTop:  "2.3em",
+        marginTop:  "2.5em",
         'text-shadow': '2px 2px black'
       }}
     />
