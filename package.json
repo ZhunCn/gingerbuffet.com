@@ -96,7 +96,7 @@
   "devDependencies": {
     "extract-text-webpack-plugin": "^3.0.2",
     "fomantic-ui-less": "^2.7.8",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^2.2.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "react-snap": "^1.23.0"

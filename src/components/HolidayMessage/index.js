@@ -13,6 +13,8 @@ const holidaysCelebrated = [
   "Christmas Day"
 ];
 
+const tempClosed = true;
+
 const holidaysClosed = [
   "Thanksgiving Day"
 ]
@@ -93,6 +95,23 @@ export default class HolidayMessage extends React.Component {
 
 
   render() {
+    if (tempClosed) {
+      return (
+        <Message color='violet'
+        >
+          <Message.Content>
+            <Message.Header>
+              COVID-19 Closing
+              </Message.Header>
+            <p>
+            Due to COVID-19 and public health safety concerns, our business will be temporarily closed until further notice.
+            Thank you for your continuous support and we hope you and your family stays healthy! You can check our Facebook 
+            page for further updates.              </p>
+          </Message.Content>
+        </Message>
+  
+      );
+    }
     if (!this.state.holiday) {
       return (
         <div />
