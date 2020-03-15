@@ -104,7 +104,7 @@ export default class HolidayMessage extends React.Component {
               COVID-19 Closing
               </Message.Header>
             <p>
-            Due to COVID-19 and public health safety concerns, our business will be temporarily closed until further notice.
+            Due to COVID-19 and public health safety concerns, our business will be temporarily closed starting on Monday, March 16th until further notice.
             Thank you for your continuous support and we hope you and your family stays healthy! You can check our Facebook 
             page for further updates.              </p>
           </Message.Content>
