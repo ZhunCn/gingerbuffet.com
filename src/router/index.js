@@ -12,6 +12,7 @@ const Router = () => {
         <Route exact path="/" component={Home} />
         <Route path="/menu" component={Menu} />
         <Route path="/location" component={Location} />
+        <Route path="/index" component={Home} />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </BrowserRouter>

@@ -104,9 +104,11 @@ export default class HolidayMessage extends React.Component {
               COVID-19 Closing
               </Message.Header>
             <p>
-            Due to COVID-19 and public health safety concerns, our business will be temporarily closed starting on Monday, March 16th until further notice.
-            Thank you for your continuous support and we hope you and your family stays healthy! You can check our Facebook 
-            page for further updates.              </p>
+              Due to COVID-19 safety concerns, our restaurant will be temporarily closed starting next week on Monday, March 16, 2020. We apologize for any inconvenience this may have caused you. We want to say thank you for your continuous support and we are looking forward to serving you soon.
+              <br />
+              For updates about when we will open again please check our website and/or our Facebook page.
+              <br />
+              P.S. All of our staff members are in good health. We are temporarily closing as a safety precaution for both our employees and customers for the coming weeks.               </p>
           </Message.Content>
         </Message>
   
