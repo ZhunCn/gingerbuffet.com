@@ -4,8 +4,11 @@ import { Menu } from 'semantic-ui-react';
 import './index.css';
 
 /**
+ * This footer is currently only used for react-snap to generate each static page
+ * 
  * TODO: Change to List with Vertical Alignment to Center
  * Include About Us?
+ * 
  */
 
 export default class Footer extends React.Component {
