@@ -37,11 +37,11 @@ export default class Menu extends React.Component {
     const panes = [
       {
         menuItem: 'NEW! Combo Express',
-        render: () => <Tab.Pane attached={false}>{expressMenu}</Tab.Pane>,
+        render: () => <Tab.Pane >{expressMenu}</Tab.Pane>,
       },
       {
         menuItem: 'Standard Take-out',
-        render: () => <Tab.Pane attached={false}>{standardMenu}</Tab.Pane>,
+        render: () => <Tab.Pane >{standardMenu}</Tab.Pane>,
       }
     ];
     return (
@@ -53,7 +53,7 @@ export default class Menu extends React.Component {
         <NavigationBar currentPage='menu' />
         <div className='content'>
           <HolidayMessage />
-          <Tab menu={{ pointing: true }} panes={panes} />
+          <Tab menu={{ attached: true, tabular: true }} panes={panes} />
 
 
         </div>
