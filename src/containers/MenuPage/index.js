@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Tab, Image } from 'semantic-ui-react';
+import { Tab, Image, Button } from 'semantic-ui-react';
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
@@ -9,6 +9,9 @@ import menuTop from '../../assets/ginger-menu-top.png';
 import menuBottom from '../../assets/ginger-menu-bottom.png';
 import expressSushi from '../../assets/ginger-express-menu-sushi.jpg';
 import expressCombo from '../../assets/ginger-express-menu-combo.jpg';
+import menuPDF from '../../assets/ginger-menu.pdf';
+import expressPDF from '../../assets/ginger-express-menu.pdf';
+
 /**
  * TODO: Add Take-out/Carry-out Menu with Prices, extracting the information on a csv/xml/json file.
  * Perferably with a Tabbed View on a Grid.
@@ -17,17 +20,19 @@ import expressCombo from '../../assets/ginger-express-menu-combo.jpg';
 export default class Menu extends React.Component {
   render() {
     // eslint-disable-next-line
-    const standardMenu = <Image.Group className='menu-pics'>
+    const standardMenu = <div><Button basic color='black' href={menuPDF}>PDF version</Button> <br/><br/>
+      <Image.Group className='menu-pics'>
       <Image src={menuTop} fluid />
       <br />
       <Image src={menuBottom} fluid />
-    </Image.Group>;
+    </Image.Group></div>;
 
-    const expressMenu = <Image.Group className='menu-pics'>
+    const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
+      <Image.Group className='menu-pics'>
       <Image src={expressCombo} fluid />
       <br />
       <Image src={expressSushi} fluid />
-    </Image.Group>;
+    </Image.Group></div>;
 
     const panes = [
       {
