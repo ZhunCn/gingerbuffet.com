@@ -13,7 +13,7 @@ const holidaysCelebrated = [
   "Christmas Day"
 ];
 
-const tempClosed = true;
+const covid_19 = true;
 
 const holidaysClosed = [
   "Thanksgiving Day"
@@ -95,20 +95,20 @@ export default class HolidayMessage extends React.Component {
 
 
   render() {
-    if (tempClosed) {
+    if (covid_19) {
       return (
         <Message color='violet'
         >
           <Message.Content>
             <Message.Header>
-              COVID-19 Closing
+              Now open for orders! -- May 18th, 2020
               </Message.Header>
             <p>
-              Due to COVID-19 safety concerns, our restaurant will be temporarily closed starting next week on Monday, March 16, 2020. We apologize for any inconvenience this may have caused you. We want to say thank you for your continuous support and we are looking forward to serving you soon.
-              <br />
-              For updates about when we will open again please check our website and/or our Facebook page.
-              <br />
-              P.S. All of our staff members are in good health. We are temporarily closing as a safety precaution for both our employees and customers for the coming weeks.               </p>
+              We have opened up for business, accepting only carry-out orders through phone order. We have a new Combo Express Menu alongside our standard take-out menu.<br />
+              Our business is enforcing social distancing policies with Curbside pickup. You will be required to order by phone.<br />
+              An online ordering system is currently being constructed, but it is not ready yet. The system will be up ASAP for your convenience.<br />
+              For more updates, please continue to check our website and/or our Facebook page.
+              </p>
           </Message.Content>
         </Message>
   
