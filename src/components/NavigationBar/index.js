@@ -6,6 +6,8 @@ import logo from '../../assets/gingerlogo.png'
 
 const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
+const orderLink = 'http://order.gingerbuffet.com/'
+
 export default class NavigationBar extends React.Component {
 
     constructor(props) {
@@ -44,6 +46,10 @@ export default class NavigationBar extends React.Component {
                         <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
+            {false && <Menu.Item href={orderLink} target="_blank" disabled>
+                        <Icon name='food' />
+                        Order Online
+            </Menu.Item>}
                     <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                         <Icon name='map marked alternate' />
                         Location and Buffet Prices/Hours
@@ -101,6 +107,10 @@ export default class NavigationBar extends React.Component {
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
+                        {false && <Menu.Item href={orderLink} target="_blank" disabled>
+                        <Icon name='food' />
+                        Order Online
+                        </Menu.Item>}
                         <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
                             Location and Buffet Prices/Hours
