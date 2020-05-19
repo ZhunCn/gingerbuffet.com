@@ -46,10 +46,10 @@ export default class NavigationBar extends React.Component {
                         <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
-            {false && <Menu.Item href={orderLink} target="_blank" disabled>
+            <Menu.Item href={orderLink} target="_blank" disabled>
                         <Icon name='food' />
                         Order Online
-            </Menu.Item>}
+            </Menu.Item>
                     <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                         <Icon name='map marked alternate' />
                         Location and Buffet Prices/Hours
@@ -107,10 +107,10 @@ export default class NavigationBar extends React.Component {
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
-                        {false && <Menu.Item href={orderLink} target="_blank" disabled>
+                        <Menu.Item href={orderLink} target="_blank" disabled>
                         <Icon name='food' />
                         Order Online
-                        </Menu.Item>}
+                        </Menu.Item>
                         <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
                             Location and Buffet Prices/Hours
