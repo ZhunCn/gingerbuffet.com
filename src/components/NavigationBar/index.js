@@ -46,7 +46,7 @@ export default class NavigationBar extends React.Component {
                         <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
-            <Menu.Item href={orderLink} target="_blank" disabled>
+            <Menu.Item href={orderLink} target="_blank">
                         <Icon name='food' />
                         Order Online
             </Menu.Item>
@@ -107,7 +107,7 @@ export default class NavigationBar extends React.Component {
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
-                        <Menu.Item href={orderLink} target="_blank" disabled>
+                        <Menu.Item href={orderLink} target="_blank">
                         <Icon name='food' />
                         Order Online
                         </Menu.Item>
