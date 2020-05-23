@@ -8,6 +8,8 @@ const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
 const orderLink = 'http://order.gingerbuffet.com/'
 
+const deliveryLink = 'https://www.doordash.com/business/441279/?utm_source=partner-link&utm_medium=website&utm_campaign=441279';
+
 export default class NavigationBar extends React.Component {
 
     constructor(props) {
@@ -48,7 +50,11 @@ export default class NavigationBar extends React.Component {
             </Menu.Item>
             <Menu.Item href={orderLink} target="_blank">
                         <Icon name='food' />
-                        Order Online
+                        Order Online for Pick Up
+            </Menu.Item>
+            <Menu.Item href={deliveryLink} target="_blank">
+                        <Icon name='box' />
+                        Order Online for Delivery
             </Menu.Item>
                     <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                         <Icon name='map marked alternate' />
@@ -109,8 +115,12 @@ export default class NavigationBar extends React.Component {
                         </Menu.Item>
                         <Menu.Item href={orderLink} target="_blank">
                         <Icon name='food' />
-                        Order Online
-                        </Menu.Item>
+                        Order Online for Pick Up
+            </Menu.Item>
+            <Menu.Item href={deliveryLink} target="_blank">
+                        <Icon name='box' />
+                        Order Online for Delivery
+            </Menu.Item>
                         <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
                             Location and Buffet Prices/Hours
