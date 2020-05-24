@@ -35,7 +35,7 @@ export default class NavigationBar extends React.Component {
         const modal = <Modal size='fullscreen' closeIcon basic dimmer='blurring' open={this.state.order} onClose={() =>this.toggleModal()}>
         <Modal.Header><center>Order Online</center></Modal.Header>
         <Modal.Content>
-            <center>Would you like to order to Pick Up or Delivery?</center>
+            <center>Would you like to order for Curbside Pick Up or Delivery?</center>
         </Modal.Content>
         <Modal.Actions>
             <center>

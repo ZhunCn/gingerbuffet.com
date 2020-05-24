@@ -35,10 +35,10 @@ export default class Menu extends React.Component {
     </Image.Group></div>;
 
     const panes = [
-      {
-        menuItem: 'NEW! Combo Express',
-        render: () => <Tab.Pane >{expressMenu}</Tab.Pane>,
-      },
+      // {
+      //   menuItem: 'NEW! Combo Express',
+      //   render: () => <Tab.Pane >{expressMenu}</Tab.Pane>,
+      // },
       {
         menuItem: 'Standard Take-out',
         render: () => <Tab.Pane >{standardMenu}</Tab.Pane>,

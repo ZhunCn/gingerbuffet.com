@@ -102,10 +102,10 @@ export default class HolidayMessage extends React.Component {
         >
           <Message.Content>
             <Message.Header>
-              Now open for carry-out and delivery orders! -- May 22nd, 2020
+              Now open for carry-out and delivery orders! -- May 24th, 2020
               </Message.Header>
             <p>
-              We have opened up for business, accepting only carry-out or delivery orders through phone or online order. We have a new Combo Express Menu alongside our standard take-out menu. <Link to='/menu'>You can view both menus at the menu page.</Link><br />
+              We have opened up for business, accepting only carry-out or delivery orders through phone or online order. Delivery will be provided via DoorDash&trade;.<br />
               Our business is enforcing social distancing policies with curbside pickup or delivery. You will be required to order by phone or online order.<br />
               For more updates, please continue to check our website and/or our Facebook page.
               </p>
