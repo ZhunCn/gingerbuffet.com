@@ -45,7 +45,7 @@ export default class Order extends React.Component {
 
         </div>
         </div>
-        <Footer currentPage='menu' />
+        <Footer currentPage='order' />
 
       </div>
     );
