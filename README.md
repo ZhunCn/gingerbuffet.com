@@ -1,4 +1,6 @@
-Development Version Deployments can be found at [https://new.gingerbuffet.com/](https://new.gingerbuffet.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/334a9fbd-5db7-4f12-8aaa-b990e335dbef/deploy-status)](https://app.netlify.com/sites/reverent-ritchie-494162/deploys)
+
+Deployed with Netlify onto [https://gingerbuffet.com](https://gingerbuffet.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
