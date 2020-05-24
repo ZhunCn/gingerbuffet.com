@@ -8,13 +8,12 @@ import Footer from '../../components/Footer';
 import menuTop from '../../assets/ginger-menu-top.png';
 import menuBottom from '../../assets/ginger-menu-bottom.png';
 import expressSushi from '../../assets/ginger-express-menu-sushi.jpg';
-import expressCombo from '../../assets/ginger-express-menu-combo.jpg';
 import menuPDF from '../../assets/ginger-menu.pdf';
-import expressPDF from '../../assets/ginger-express-menu.pdf';
+import expressPDF from '../../assets/ginger-express-menu-sushi.pdf';
 
 /**
  * TODO: Add Take-out/Carry-out Menu with Prices, extracting the information on a csv/xml/json file.
- * Perferably with a Tabbed View on a Grid.
+ * Preferably with a Tabbed View on a Grid.
  */
 
 export default class Menu extends React.Component {
@@ -27,22 +26,19 @@ export default class Menu extends React.Component {
       <Image src={menuBottom} fluid />
     </Image.Group></div>;
 
-      // eslint-disable-next-line
       const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
       <Image.Group className='menu-pics'>
-      <Image src={expressCombo} fluid />
-      <br />
-      <Image src={expressSushi} fluid />
+        <Image src={expressSushi} fluid />
     </Image.Group></div>;
 
     const panes = [
-      // {
-      //   menuItem: 'NEW! Combo Express',
-      //   render: () => <Tab.Pane >{expressMenu}</Tab.Pane>,
-      // },
       {
         menuItem: 'Standard Take-out',
         render: () => <Tab.Pane >{standardMenu}</Tab.Pane>,
+      },
+      {
+        menuItem: 'NEW! Sushi Express',
+        render: () => <Tab.Pane >{expressMenu}</Tab.Pane>,
       }
     ];
     return (
