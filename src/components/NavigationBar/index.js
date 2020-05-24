@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Responsive, Icon, Image, Menu, Transition } from 'semantic-ui-react';
+import { Responsive, Icon, Image, Menu, Transition, Modal, Button } from 'semantic-ui-react';
 import './index.css';
-import logo from '../../assets/gingerlogo.png'
+import logo from '../../assets/gingerlogo-outline.png'
 
 const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
@@ -15,7 +15,8 @@ export default class NavigationBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible: false
+            visible: false,
+            order: false
         }
     }
     setVisibility() {
@@ -24,8 +25,35 @@ export default class NavigationBar extends React.Component {
         })
     }
 
+    toggleModal() {
+        this.setState({
+            order: !this.state.order
+        })
+    }
+
     render() {
+        const modal = <Modal size='fullscreen' closeIcon basic dimmer='blurring' open={this.state.order} onClose={() =>this.toggleModal()}>
+        <Modal.Header><center>Order Online</center></Modal.Header>
+        <Modal.Content>
+            <center>Would you like to order to Pick Up or Delivery?</center>
+        </Modal.Content>
+        <Modal.Actions>
+            <center>
+        <Button circular size='huge' href={orderLink}>
+                        <Icon name='car' />
+                        Curbside Pick Up
+            </Button>
+            <Responsive                   
+         {...Responsive.onlyMobile}>
+            <br/><br/>
+            </Responsive>
+                        <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_white_l.svg'></Image>
+            </center>
+        </Modal.Actions>
+      </Modal>;
+
         return (
+            <div>
             <div className='navbar-bg'>
                 <Responsive
                     as={Menu}
@@ -48,13 +76,9 @@ export default class NavigationBar extends React.Component {
                         <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
-            <Menu.Item href={orderLink} target="_blank">
+            <Menu.Item onClick={() => this.toggleModal()}>
                         <Icon name='food' />
-                        Order Online for Pick Up
-            </Menu.Item>
-            <Menu.Item href={deliveryLink} target="_blank">
-                        <Icon name='box' />
-                        Order Online for Delivery
+                        Order Online
             </Menu.Item>
                     <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                         <Icon name='map marked alternate' />
@@ -113,13 +137,9 @@ export default class NavigationBar extends React.Component {
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
-                        <Menu.Item href={orderLink} target="_blank">
+                        <Menu.Item onClick={() => this.toggleModal()}>
                         <Icon name='food' />
-                        Order Online for Pick Up
-            </Menu.Item>
-            <Menu.Item href={deliveryLink} target="_blank">
-                        <Icon name='box' />
-                        Order Online for Delivery
+                        Order Online
             </Menu.Item>
                         <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                             <Icon name='map marked alternate' />
@@ -133,7 +153,8 @@ export default class NavigationBar extends React.Component {
                     </Transition.Group>
                 </Responsive>
             </div>
-
+            {modal}
+            </div>
         );
     }
 }
