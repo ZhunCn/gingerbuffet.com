@@ -26,9 +26,11 @@ export default class NavigationBar extends React.Component {
     }
 
     toggleModal() {
-        this.setState({
-            order: !this.state.order
-        })
+        if (this.props.currentPage !== 'order') {
+            this.setState({
+                order: !this.state.order
+            })
+        }
     }
 
     render() {
@@ -76,7 +78,7 @@ export default class NavigationBar extends React.Component {
                         <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
-            <Menu.Item onClick={() => this.toggleModal()}>
+            <Menu.Item onClick={() => this.toggleModal()}  active={this.props.currentPage === 'order'}>
                         <Icon name='food' />
                         Order Online
             </Menu.Item>
@@ -137,7 +139,7 @@ export default class NavigationBar extends React.Component {
                             <Icon name='utensil spoon' />
                             Menu
                         </Menu.Item>
-                        <Menu.Item onClick={() => this.toggleModal()}>
+                        <Menu.Item onClick={() => this.toggleModal()}  active={this.props.currentPage === 'order'}>
                         <Icon name='food' />
                         Order Online
             </Menu.Item>

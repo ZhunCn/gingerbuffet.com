@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Message } from 'semantic-ui-react';
 import Holidays from 'date-holidays';
 

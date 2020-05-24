@@ -36,6 +36,12 @@
   margin-right: 10px;
 }
 
+.content-order {
+  margin-top: 80px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
 .roundElement	{
 	border-radius: 5px;
 }

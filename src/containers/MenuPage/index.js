@@ -27,7 +27,8 @@ export default class Menu extends React.Component {
       <Image src={menuBottom} fluid />
     </Image.Group></div>;
 
-    const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
+      // eslint-disable-next-line
+      const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
       <Image.Group className='menu-pics'>
       <Image src={expressCombo} fluid />
       <br />
