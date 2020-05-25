@@ -101,9 +101,11 @@ export default class HolidayMessage extends React.Component {
         >
           <Message.Content>
             <Message.Header>
-              Now open for carry-out and delivery orders! -- May 24th, 2020
+              NEW! Lunch Special | Now open for carry-out and delivery orders! -- May 25th, 2020
               </Message.Header>
             <p>
+            We are one week into our re-opening and have a special for you all! Buy a lunch special this week for Curbside Pick Up and get a free can of soda included in your purchase.<br/>
+              <br />
               We have opened up for business, accepting only carry-out or delivery orders through phone or online order. Delivery will be provided via DoorDash&trade;.<br />
               Our business is enforcing social distancing policies with curbside pickup or delivery. You will be required to order by phone or online order.<br />
               For more updates, please continue to check our website and/or our Facebook page.
