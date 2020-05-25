@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.6.0",
+    "@leadhome/react-snap-sitemap": "^0.1.4",
     "@loadable/component": "^5.10.3",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
@@ -62,7 +63,7 @@
     "semantic-ui-react": "^0.88.1",
     "semver": "6.3.0",
     "style-loader": "1.0.0",
-    "terser-webpack-plugin": "1.4.1",
+    "terser-webpack-plugin": "3.0.1",
     "ts-pnp": "1.1.4",
     "url-loader": "2.1.0",
     "webpack": "4.41.0",
@@ -75,7 +76,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap && react-snap-sitemap --base-url='https://gingerbuffet.com/' --change-frequency=daily",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
