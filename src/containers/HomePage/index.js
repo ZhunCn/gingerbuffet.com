@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Header } from 'semantic-ui-react'
+import { Header, Button, Icon } from 'semantic-ui-react'
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
@@ -11,17 +11,36 @@ import Footer from '../../components/Footer'
  */
 
 export default class Home extends React.Component {
-  render() {
+    
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: false
+    }
+  }
+
+  toggleModal() {
+    this.setState({
+      order: !this.state.order
+    })
+
+  }
+
+render() {
     return (
       <div className='deskBackground'>
         <Helmet>
           <title>Home - Ginger Buffet & Grill</title>
         </Helmet>
-          <NavigationBar currentPage='home' />
+        <NavigationBar currentPage='home' order={this.state.order} toggleModal={() => this.toggleModal()}/>
 
           
-          <div className='content'>
+          <div className='pagecontent'>
           <HolidayMessage />
+          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+                        <Icon name='food' />
+                        Order Now!
+            </Button>
           <Header
       as="h1"
       content="Welcome to Ginger Buffet and Grill"

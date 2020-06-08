@@ -119,7 +119,7 @@ export default class Location extends React.Component {
           <title>Location and Hours - Ginger Buffet & Grill</title>
         </Helmet>
         <NavigationBar currentPage='location' />
-        <div className='content'>
+        <div className='pagecontent'>
 
           <HolidayMessage />
           <Responsive minWidth={Responsive.onlyTablet.minWidth}>

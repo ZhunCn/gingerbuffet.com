@@ -23,7 +23,7 @@ export default class Order extends React.Component {
         </Helmet>
 
         <NavigationBar currentPage='order' />
-        <div className='content'>
+        <div className='pagecontent'>
           <HolidayMessage />
       <div className='content-order'>
       <Segment>

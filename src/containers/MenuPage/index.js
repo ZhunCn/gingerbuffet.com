@@ -48,7 +48,7 @@ export default class Menu extends React.Component {
         </Helmet>
 
         <NavigationBar currentPage='menu' />
-        <div className='content'>
+        <div className='pagecontent'>
           <HolidayMessage />
           <Tab menu={{ attached: true, tabular: true }} panes={panes} />
 

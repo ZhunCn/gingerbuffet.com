@@ -6,7 +6,7 @@ import logo from '../../assets/gingerlogo-outline.png'
 
 const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
-const orderLink = 'http://order.gingerbuffet.com/'
+const orderLink = 'https://order.gingerbuffet.com/'
 
 const deliveryLink = 'https://www.doordash.com/business/441279/?utm_source=partner-link&utm_medium=website&utm_campaign=441279';
 
@@ -16,9 +16,18 @@ export default class NavigationBar extends React.Component {
         super(props);
         this.state = {
             visible: false,
-            order: false
+            order: this.props.order !== null ? this.props.order : false
         }
     }
+
+    componentDidUpdate() {
+        if (this.props.order !== null && this.props.order !== this.state.order) {
+        this.setState({
+            order: this.props.order !== null ? this.props.order : false
+        })
+        }
+    }
+
     setVisibility() {
         this.setState({
             visible: !this.state.visible
@@ -26,7 +35,9 @@ export default class NavigationBar extends React.Component {
     }
 
     toggleModal() {
-        if (this.props.currentPage !== 'order') {
+        if (this.props.currentPage === 'home') {
+            this.props.toggleModal();
+        } else if (this.props.currentPage !== 'order') {
             this.setState({
                 order: !this.state.order
             })
