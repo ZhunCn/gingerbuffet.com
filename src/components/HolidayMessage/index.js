@@ -101,8 +101,8 @@ export default class HolidayMessage extends React.Component {
         >
           <Message.Content>
             <Message.Header>
-            Open for curbside pickup and delivery orders!
-              </Message.Header>
+            Dine-In Buffet Re-Opening on Friday, June 26th!
+ | Now Open for Curbside Pickup and Delivery!              </Message.Header>
             <p>
               Delivery orders are with DoorDash&trade; only.
               </p>
