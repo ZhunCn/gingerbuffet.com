@@ -27,13 +27,13 @@ export default class Order extends React.Component {
           <HolidayMessage />
       <div className='content-order'>
       <Segment>
-        <Header>Would you like to order for Curbside Pick Up or Delivery?</Header>
+        <Header>Would you like to order for Carry-out or Delivery?</Header>
           
             
           <Segment.Inline>
         <Button circular size='huge' href={orderLink}>
                         <Icon name='car' />
-                        Curbside Pick Up
+                        Carry-out
             </Button>
             <Responsive                   
          {...Responsive.onlyMobile}>
