@@ -6,7 +6,7 @@ import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
 
-const orderLink = 'http://order.gingerbuffet.com/'
+const orderLink = 'https://order.gingerbuffet.com/'
 
 const deliveryLink = 'https://www.doordash.com/business/441279/?utm_source=partner-link&utm_medium=website&utm_campaign=441279';
 
