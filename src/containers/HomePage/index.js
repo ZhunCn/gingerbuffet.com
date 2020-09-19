@@ -37,6 +37,7 @@ render() {
           
           <div className='pagecontent'>
           <HolidayMessage />
+          <br/>
           <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
                         <Icon name='food' />
                         Order Now!
