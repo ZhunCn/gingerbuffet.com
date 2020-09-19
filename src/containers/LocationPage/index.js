@@ -122,6 +122,7 @@ export default class Location extends React.Component {
         <div className='pagecontent'>
 
           <HolidayMessage />
+          <br/>
           <Responsive minWidth={Responsive.onlyTablet.minWidth}>
 
 
