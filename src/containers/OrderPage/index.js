@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Responsive, Segment, Header, Image, Button, Icon } from 'semantic-ui-react';
+import { Responsive, Segment, Header, Image, Button, Icon, Grid } from 'semantic-ui-react';
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
@@ -31,16 +31,43 @@ export default class Order extends React.Component {
           
             
           <Segment.Inline>
-        <Button circular size='huge' href={orderLink}>
-                        <Icon name='car' />
-                        Carry-out
-            </Button>
-            <Responsive                   
-         {...Responsive.onlyMobile}>
-            <br/><br/>
-            </Responsive>
-                        <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
-                        </Segment.Inline>
+          <Responsive
+                        minWidth={Responsive.onlyTablet.minWidth}>
+                    <Grid columns={4} padded >
+                        <Grid.Row>
+                            <Grid.Column />
+                            <Grid.Column floated='right'>
+                            <Button circular size='massive' href={orderLink} color='orange'>
+                                <Icon name='food' />
+                                Carry-out
+                            </Button>
+                            </Grid.Column>
+                            <Grid.Column>
+                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                            </Grid.Column>
+                            <Grid.Column />
+                        </Grid.Row>
+                    </Grid>
+                    </Responsive>
+
+                    <Responsive
+                        {...Responsive.onlyMobile}>
+                        <Grid columns={1} >
+                        <Grid.Row>
+                            <Grid.Column>
+                            <Button circular size='massive' href={orderLink} color='orange'>
+                                <Icon name='food' />
+                                Carry-out
+                            </Button>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
+                            <Grid.Column>
+                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
+                    </Responsive>                        </Segment.Inline>
       </Segment>
 
         </div>

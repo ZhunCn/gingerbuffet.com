@@ -96,7 +96,19 @@ export default class HolidayMessage extends React.Component {
 
   render() {
     if (covid_19) {
-      return (
+      return (<div>
+        <Message color='red'
+        >
+          <Message.Content>
+            <Message.Header>
+             Limited Time Deal!
+             </Message.Header>
+            <p>
+            If you register for the first time on our website, you will receive a $5 off coupon for orders $20 or more. Expires after 2 weeks of registration.<br/>
+            In addition, you will also receive a limited time coupon for $5 off orders $30 or more. Expires on October 15th.
+              </p>
+          </Message.Content>
+        </Message>
         <Message color='violet'
         >
           <Message.Content>
@@ -110,7 +122,7 @@ export default class HolidayMessage extends React.Component {
               </p>
           </Message.Content>
         </Message>
-  
+        </div>
       );
     }
     if (!this.state.holiday) {
