@@ -51,43 +51,43 @@ export default class NavigationBar extends React.Component {
                 <center>Would you like to order for Carry-out or Delivery?</center>
             </Modal.Content>
             <Modal.Actions>
-                <center >
-                <Responsive
+                <center>
+                    <Responsive
                         minWidth={Responsive.onlyTablet.minWidth}>
-                    <Grid columns={4} padded >
-                        <Grid.Row>
-                            <Grid.Column />
-                            <Grid.Column floated='right'>
-                            <Button circular size='massive' href={orderLink} color='orange'>
-                                <Icon name='food' />
+                        <Grid columns={4} padded >
+                            <Grid.Row>
+                                <Grid.Column />
+                                <Grid.Column floated='right'>
+                                    <Button circular size='massive' href={orderLink} color='orange'>
+                                        <Icon name='food' />
                                 Carry-out
                             </Button>
-                            </Grid.Column>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
-                            </Grid.Column>
-                            <Grid.Column />
-                        </Grid.Row>
-                    </Grid>
+                                </Grid.Column>
+                                <Grid.Column>
+                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                                </Grid.Column>
+                                <Grid.Column />
+                            </Grid.Row>
+                        </Grid>
                     </Responsive>
 
                     <Responsive
                         {...Responsive.onlyMobile}>
                         <Grid columns={1} >
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Button circular size='massive' href={orderLink} color='orange'>
-                                <Icon name='food' />
+                            <Grid.Row>
+                                <Grid.Column>
+                                    <Button circular size='massive' href={orderLink} color='orange'>
+                                        <Icon name='food' />
                                 Carry-out
                             </Button>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                                </Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row>
+                                <Grid.Column>
+                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
                     </Responsive>
                 </center>
             </Modal.Actions>

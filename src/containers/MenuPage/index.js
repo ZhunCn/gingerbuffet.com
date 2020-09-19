@@ -50,6 +50,7 @@ export default class Menu extends React.Component {
         <NavigationBar currentPage='menu' />
         <div className='pagecontent'>
           <HolidayMessage />
+          <br/>
           {standardMenu}
 
 
