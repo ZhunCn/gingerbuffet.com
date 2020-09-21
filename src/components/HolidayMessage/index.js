@@ -117,7 +117,7 @@ export default class HolidayMessage extends React.Component {
              </Message.Header>
             <p>
               In accordance to the restrictions from the Illinois State Health Department, we will be going back to Carry-out orders only, either through the buffet or menu.<br/>
-              Delivery orders can be made with DoorDash&trade; only.<br/>
+              Delivery orders can be made with DoorDash&trade; and GrubHub&trade; only.<br/>
               This will be in effect until further notice!
               </p>
           </Message.Content>
