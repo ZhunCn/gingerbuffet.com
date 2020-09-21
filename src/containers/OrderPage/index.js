@@ -28,60 +28,62 @@ export default class Order extends React.Component {
         <NavigationBar currentPage='order' />
         <div className='pagecontent'>
           <HolidayMessage />
-      <div className='content-order'>
-      <Segment>
-        <Header>Would you like to order for Carry-out or Delivery?</Header>
-          
-            
-          <Segment.Inline>
-          <Responsive
-                        minWidth={Responsive.onlyTablet.minWidth}>
-                    <Grid columns={5} padded >
-                        <Grid.Row>
-                            <Grid.Column />
-                            <Grid.Column floated='right'>
-                            <Button circular size='massive' href={orderLink} color='orange'>
-                                <Icon name='food' />
+          <div className='content-order'>
+            <Segment>
+              <Header>Would you like to order for Carry-out or Delivery?</Header>
+
+
+              <Segment.Inline>
+                <Responsive
+                  minWidth={Responsive.onlyTablet.minWidth}>
+                  <Grid columns={5} padded >
+                    <Grid.Row>
+                      <Grid.Column />
+                      <Grid.Column floated='right'>
+                        <Button circular size='massive' href={orderLink} color='orange'>
+                          <Icon name='food' />
                                 Carry-out
                             </Button>
-                            </Grid.Column>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
-                            </Grid.Column>
-                            <Grid.Column>
-                                    <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
-                            </Grid.Column>
-                            <Grid.Column />
-                        </Grid.Row>
-                    </Grid>
-                    </Responsive>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
+                      </Grid.Column>
+                      <Grid.Column />
+                    </Grid.Row>
+                  </Grid>
+                </Responsive>
 
-                    <Responsive
-                        {...Responsive.onlyMobile}>
-                        <Grid columns={1} >
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Button circular size='massive' href={orderLink} color='orange'>
-                                <Icon name='food' />
+                <center>
+                  <Responsive
+                    {...Responsive.onlyMobile}>
+                    <Grid columns={1} >
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Button circular size='massive' href={orderLink} color='orange'>
+                            <Icon name='food' />
                                 Carry-out
                             </Button>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
-                            </Grid.Column>
-                        </Grid.Row>
+                        </Grid.Column>
+                      </Grid.Row>
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                        </Grid.Column>
+                      </Grid.Row>
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
+                        </Grid.Column>
+                      </Grid.Row>
                     </Grid>
-                    </Responsive>                        </Segment.Inline>
-      </Segment>
+                  </Responsive></center>
+              </Segment.Inline>
+            </Segment>
 
-        </div>
+          </div>
         </div>
         <Footer currentPage='order' />
 
