@@ -34,6 +34,7 @@ export default class Order extends React.Component {
 
 
               <Segment.Inline>
+              <center>
                 <Responsive
                   minWidth={Responsive.onlyTablet.minWidth}>
                   <Grid columns={5} padded >
@@ -56,7 +57,7 @@ export default class Order extends React.Component {
                   </Grid>
                 </Responsive>
 
-                <center>
+               
                   <Responsive
                     {...Responsive.onlyMobile}>
                     <Grid columns={1} >
