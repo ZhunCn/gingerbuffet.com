@@ -162,7 +162,7 @@ export default class NavigationBar extends React.Component {
                             secondary
                             className='navbar-menu'
                         >
-                            <Menu.Item position='left' as={Link} to={'/'}>
+                            <Menu.Item position='left' href='tel:+1618-398-3888'>
                             <div className='phone-number-text'>
                             <Icon name='phone' />
                             <b>(618)-398-3888</b> <br/>
