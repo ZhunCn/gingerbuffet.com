@@ -13,3 +13,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.phone-number-text {
+  align-items: left;
+  color: white;
+  text-align: left;
+  font-size: calc(20px + 1vmin);
+}
+
+.dropdown-menu-bigger {
+  font-size: calc(20px + 1vmin);
+}

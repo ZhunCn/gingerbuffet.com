@@ -93,10 +93,10 @@ export default class NavigationBar extends React.Component {
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row>
-                            <Grid.Column>
-                            <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
-                            </Grid.Column>
-                        </Grid.Row>
+                                <Grid.Column>
+                                    <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
+                                </Grid.Column>
+                            </Grid.Row>
                         </Grid>
                     </Responsive>
                 </center>
@@ -150,6 +150,11 @@ export default class NavigationBar extends React.Component {
                     <Responsive
                         {...Responsive.onlyMobile}
                     >
+                        
+                         <center>   
+                        <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo}></Image>
+                        </center>
+
                         <Menu
                             fluid
                             inverted
@@ -157,22 +162,21 @@ export default class NavigationBar extends React.Component {
                             secondary
                             className='navbar-menu'
                         >
-                            <Menu.Item as={Link} to={'/'}>
-                                <Image size='small' src={logo}></Image>
+                            <Menu.Item position='left' as={Link} to={'/'}>
+                            <div className='phone-number-text'>
+                            <Icon name='phone' />
+                            <b>(618)-398-3888</b> <br/>
+                            </div>
                             </Menu.Item>
-                            <Menu.Item className='navbar-item-center' href='tel:+1618-398-3888'>
 
-                                <Icon name='phone' />
-                                <b>(618)-398-3888</b> <br /><br /><br /><br />
-                            </Menu.Item>
 
                             <Menu.Item className='navbar-item-center' position='right' onClick={() => this.setVisibility()}>
-                                <Icon name='bars' size='big' /> <br /><br /><br /><br />
+                            <div className='dropdown-menu-bigger'>Menu </div><Icon name='bars' size='big' />
                             </Menu.Item>
-
                         </Menu>
+                        
                         <Transition.Group animation={'fade down'} duration={{ hide: 200, show: 400 }}>
-                            {this.state.visible && <Menu
+                            {this.state.visible && <Menu 
                                 fluid
                                 inverted
                                 pointing
@@ -182,23 +186,23 @@ export default class NavigationBar extends React.Component {
 
                                 <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
                                     <Icon name='home' />
-                            Home
+                            <div className='dropdown-menu-bigger'>Home</div>
                         </Menu.Item>
                                 <Menu.Item as={Link} to={'/menu'} active={this.props.currentPage === 'menu'}>
                                     <Icon name='utensil spoon' />
-                            Menu
+                                    <div className='dropdown-menu-bigger'>Menu </div>
                         </Menu.Item>
                                 <Menu.Item onClick={() => this.toggleModal()} active={this.props.currentPage === 'order'}>
                                     <Icon name='food' />
-                        Order Online
+                                    <div className='dropdown-menu-bigger'>Order Online </div>
             </Menu.Item>
                                 <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                                     <Icon name='map marked alternate' />
-                            Location and Buffet Hours
+                                    <div className='dropdown-menu-bigger'>Location and Buffet Hours </div>
                         </Menu.Item>
                                 <Menu.Item href={fbPageLink} target="_blank">
                                     <Icon name='facebook square' />
-                            Facebook Page
+                                    <div className='dropdown-menu-bigger'>Facebook Page </div>
                         </Menu.Item>
                             </Menu>}
                         </Transition.Group>
