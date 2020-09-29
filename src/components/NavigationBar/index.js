@@ -133,7 +133,7 @@ export default class NavigationBar extends React.Component {
             </Menu.Item>
                             <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                                 <Icon name='map marked alternate' />
-                        Location and Buffet Prices/Hours
+                        Location and Buffet Hours
             </Menu.Item>
                             <Menu.Item href={fbPageLink} target="_blank">
                                 <Icon name='facebook square' />
@@ -194,7 +194,7 @@ export default class NavigationBar extends React.Component {
             </Menu.Item>
                                 <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
                                     <Icon name='map marked alternate' />
-                            Location and Buffet Prices/Hours
+                            Location and Buffet Hours
                         </Menu.Item>
                                 <Menu.Item href={fbPageLink} target="_blank">
                                     <Icon name='facebook square' />

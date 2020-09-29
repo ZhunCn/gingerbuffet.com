@@ -11,10 +11,12 @@ const mapAPIURL = 'https://www.google.com/maps/embed/v1/place?key='
 const API_KEY = 'AIzaSyBmMpPd3_6YCY_VlIliOMPfmTazVa3-ahE'
 const locationQuery = '&q=Ginger+Buffet,Fairview+Heights+IL'
 
-const lunchPrice = '$8.29';
-const dinnerPrice = '$11.29';
-const weekendPrice = '$12.29';
-
+// const lunchPrice = '$8.29';
+// const dinnerPrice = '$11.29';
+// const weekendPrice = '$12.29';
+const lunchPrice = '';
+const dinnerPrice = '';
+const weekendPrice = '';
 /**
  * TODO: Add Content related to our restaurant such as Pricing for Buffet, Address, Hours, Map Location
  */
@@ -94,9 +96,9 @@ export default class Location extends React.Component {
           </Segment></>;
     
     const bottomDetailsDesktop = <Segment>
-      <Header>
+      {/*<Header>
         Buffet Prices
-        </Header>
+      </Header>*/}
       <Segment.Group horizontal raised>
         {bottomDetails}
       </Segment.Group>
@@ -104,9 +106,9 @@ export default class Location extends React.Component {
 
     </Segment>;
     const bottomDetailsMobile = <Segment>
-      <Header>
+      {/*<Header>
         Buffet Prices
-    </Header>
+      </Header>*/}
         {bottomDetails}
         <b>Senior, Active Military, and Children Buffet<br/> Dine-in Discount Available.<br/><hr/>Senior Special Day on Wednesdays.</b>
     </Segment>;
