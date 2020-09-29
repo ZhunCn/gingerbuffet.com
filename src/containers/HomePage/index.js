@@ -36,12 +36,15 @@ render() {
 
           
           <div className='pagecontent'>
-          <HolidayMessage />
-          <br/>
           <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
                         <Icon name='food' />
                         Order Now!
             </Button>
+            <br/><br/>
+
+
+          <HolidayMessage />
+
           <Header
       as="h1"
       content="Welcome to Ginger Buffet and Grill"

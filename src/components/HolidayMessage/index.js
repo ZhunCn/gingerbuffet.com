@@ -100,26 +100,30 @@ export default class HolidayMessage extends React.Component {
         <Message color='red'
         >
           <Message.Content>
-            <Message.Header>
+          <h1>
              Limited Time Deal!
-             </Message.Header>
-            <h4>
+             
+             <h4>
             If you register for the first time on our website, you will receive a $5 off coupon for orders $20 or more. Expires after 2 weeks of registration.<br/>
             In addition, you will also receive a limited time coupon for $5 off orders $30 or more. Expires on October 15th.
               </h4>
+             </h1>
+             
           </Message.Content>
         </Message>
         <Message color='violet'
         >
           <Message.Content>
-            <Message.Header>
-             Notice! Carry-out Orders Only! (Sept. 2nd, 2020)
-             </Message.Header>
+            <h1>
+             Carry-out Orders Only!
+             
             <h4>
               In accordance to the restrictions from the Illinois State Health Department, we will be going back to Carry-out orders only, either through the buffet or menu.<br/>
               Delivery orders can be made with DoorDash&trade; and GrubHub&trade; only.<br/>
-              This will be in effect until further notice!
+              This will be in effect until further notice! 
               </h4>
+              </h1>
+              (Last Updated Sept. 2nd, 2020)
           </Message.Content>
         </Message>
         </div>
