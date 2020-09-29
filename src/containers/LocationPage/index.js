@@ -96,9 +96,9 @@ export default class Location extends React.Component {
           </Segment></>;
     
     const bottomDetailsDesktop = <Segment>
-      {/*<Header>
-        Buffet Prices
-      </Header>*/}
+      <Header>
+        Buffet Hours
+      </Header>
       <Segment.Group horizontal raised>
         {bottomDetails}
       </Segment.Group>
@@ -106,9 +106,9 @@ export default class Location extends React.Component {
 
     </Segment>;
     const bottomDetailsMobile = <Segment>
-      {/*<Header>
-        Buffet Prices
-      </Header>*/}
+      <Header>
+        Buffet Hours
+      </Header>
         {bottomDetails}
         <b>Senior, Active Military, and Children Buffet<br/> Dine-in Discount Available.<br/><hr/>Senior Special Day on Wednesdays.</b>
     </Segment>;
