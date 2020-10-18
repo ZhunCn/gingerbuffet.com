@@ -13,8 +13,6 @@ const holidaysCelebrated = [
   "Christmas Day"
 ];
 
-const covid_19 = true;
-
 const holidaysClosed = [
   "Thanksgiving Day"
 ]
