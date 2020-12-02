@@ -111,19 +111,6 @@ export default class HolidayMessage extends React.Component {
             (Last Updated Nov. 7th, 2020)
           </Message.Content>
         </Message>
-        <Message color='red'>
-          <Message.Content>
-          <h1>
-             Limited Time Deal!
-             
-             <h4>
-            If you register for the first time on our website, you will receive a $5 off coupon for orders $20 or more. Expires after 2 weeks of registration.<br/>
-            In addition, you will also receive a limited time coupon for $5 off orders $30 or more. Expires on November 30th.
-              </h4>
-             </h1>
-             
-          </Message.Content>
-        </Message>
         
         </div>
       );
