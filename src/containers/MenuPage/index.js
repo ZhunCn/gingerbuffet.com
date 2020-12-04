@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Image, Button } from 'semantic-ui-react';
+import { Image, Button, Icon } from 'semantic-ui-react';
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
@@ -17,6 +17,20 @@ import menuPDF from '../../assets/ginger-menu.pdf';
  */
 
 export default class Menu extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: false
+    }
+  }
+
+  toggleModal() {
+    this.setState({
+      order: !this.state.order
+    })
+  }
+  
   render() {
     // eslint-disable-next-line
     const standardMenu = <div><Button color='black' href={menuPDF}>PDF version</Button> <br/><br/>
@@ -47,8 +61,13 @@ export default class Menu extends React.Component {
           <title>Menu - Ginger Buffet & Grill</title>
         </Helmet>
 
-        <NavigationBar currentPage='menu' />
-        <div className='pagecontent'>
+        <NavigationBar currentPage='menu' order={this.state.order} toggleModal={() => this.toggleModal()}/>
+          <div className='pagecontent'>
+          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+                        <Icon name='food' />
+                        Order Now!
+            </Button>
+            <br/><br/>
           <HolidayMessage />
           <br/>
           {standardMenu}

@@ -23,7 +23,6 @@ export default class Home extends React.Component {
     this.setState({
       order: !this.state.order
     })
-
   }
 
 render() {
@@ -33,16 +32,12 @@ render() {
           <title>Home - Ginger Buffet & Grill</title>
         </Helmet>
         <NavigationBar currentPage='home' order={this.state.order} toggleModal={() => this.toggleModal()}/>
-
-          
           <div className='pagecontent'>
           <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
                         <Icon name='food' />
                         Order Now!
             </Button>
             <br/><br/>
-
-
           <HolidayMessage />
 
           <Header

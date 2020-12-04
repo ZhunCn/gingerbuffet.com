@@ -37,12 +37,8 @@ export default class NavigationBar extends React.Component {
     }
 
     toggleModal() {
-        if (this.props.currentPage === 'home') {
+        if (this.props.currentPage !== 'order') {
             this.props.toggleModal();
-        } else if (this.props.currentPage !== 'order') {
-            this.setState({
-                order: !this.state.order
-            })
         }
     }
 

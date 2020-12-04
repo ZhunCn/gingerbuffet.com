@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import Iframe from 'react-iframe';
-import { Divider, Grid, Segment, Header, Responsive } from 'semantic-ui-react';
+import { Divider, Grid, Segment, Header, Responsive, Button, Icon } from 'semantic-ui-react';
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
@@ -22,6 +22,20 @@ const weekendPrice = '';
  */
 
 export default class Location extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: false
+    }
+  }
+
+  toggleModal() {
+    this.setState({
+      order: !this.state.order
+    })
+  }
+
   render() {
     const mapDesktopIFrame = <Iframe
       url={mapAPIURL + API_KEY + locationQuery}
@@ -120,9 +134,13 @@ export default class Location extends React.Component {
         <Helmet>
           <title>Location and Hours - Ginger Buffet & Grill</title>
         </Helmet>
-        <NavigationBar currentPage='location' />
-        <div className='pagecontent'>
-
+        <NavigationBar currentPage='location' order={this.state.order} toggleModal={() => this.toggleModal()}/>
+          <div className='pagecontent'>
+          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+                        <Icon name='food' />
+                        Order Now!
+            </Button>
+            <br/><br/>
           <HolidayMessage />
           <br/>
           <Responsive minWidth={Responsive.onlyTablet.minWidth}>
