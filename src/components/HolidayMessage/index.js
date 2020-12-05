@@ -1,6 +1,7 @@
 import React from 'react';
-import { Message } from 'semantic-ui-react';
+import { Message, Grid, Image } from 'semantic-ui-react';
 import Holidays from 'date-holidays';
+import coupons from '../../assets/ginger-coupons-Dec2020.png'
 
 const holidayPricing = '$12.99';
 const holidaysCelebrated = [
@@ -97,20 +98,33 @@ export default class HolidayMessage extends React.Component {
   render() {
     if (covid_19) {
       return (<div>
-        <Message color='violet'>
-          <Message.Content>
-            <h1>
-              Carry-out Orders Only!
+        <Grid columns={1}>
+          <Grid.Row>
+
+            <Grid.Column>
+            <Message color='violet'>
+              <Message.Content>
+                <h1>
+                  Carry-out Orders Only!
               
-              <h4>
-                In accordance to the restrictions from the Illinois State Health Department, we will be going back to Carry-out orders only, either through the buffet or menu.<br/>
-                Delivery orders can be made with DoorDash&trade; and GrubHub&trade; only.<br/>
-                This will be in effect until further notice! 
-              </h4>
-            </h1>
-            (Last Updated Nov. 7th, 2020)
-          </Message.Content>
-        </Message>
+                  <h4>
+                    In accordance to the restrictions from the Illinois State Health Department, we will be going back to Carry-out orders only, either through the buffet or menu.<br/>
+                    Delivery orders can be made with DoorDash&trade; and GrubHub&trade; only.<br/>
+                    This will be in effect until further notice! 
+                  </h4>
+                </h1>
+              (Last Updated Nov. 7th, 2020)
+            </Message.Content>
+            </Message>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <center><Image size='medium' src={coupons} /> </center>
+            </Grid.Column>
+          </Grid.Row>
+
+        </Grid>
         
         </div>
       );
