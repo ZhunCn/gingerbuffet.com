@@ -118,11 +118,11 @@ export default class HolidayMessage extends React.Component {
             </Message>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
+          {false && <Grid.Row>
             <Grid.Column>
               <center><Image size='medium' src={coupons} /> </center>
             </Grid.Column>
-          </Grid.Row>
+          </Grid.Row>}
 
         </Grid>
         
