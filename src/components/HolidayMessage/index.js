@@ -105,15 +105,8 @@ export default class HolidayMessage extends React.Component {
             <Message color='violet'>
               <Message.Content>
                 <h1>
-                  Carry-out Orders Only!
-              
-                  <h4>
-                    In accordance to the restrictions from the Illinois State Health Department, we will be going back to Carry-out orders only, either through the buffet or menu.<br/>
-                    Delivery orders can be made with DoorDash&trade; and GrubHub&trade; only.<br/>
-                    This will be in effect until further notice! 
-                  </h4>
+                Now Open for Dine-In Buffet, Carry-out and Delivery!
                 </h1>
-              (Last Updated Nov. 7th, 2020)
             </Message.Content>
             </Message>
             </Grid.Column>
