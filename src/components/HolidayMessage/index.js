@@ -105,7 +105,7 @@ export default class HolidayMessage extends React.Component {
             <Message color='violet'>
               <Message.Content>
                 <h1>
-                Now Open for Dine-In Buffet, Carry-out and Delivery!
+                Now Open for Dine-In Buffet!
                 </h1>
             </Message.Content>
             </Message>
