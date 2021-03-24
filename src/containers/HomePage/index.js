@@ -6,9 +6,7 @@ import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
 
-/**
- * TODO: Add Content related to our restaurant such as images/carousel, general description, etc.
- */
+const orderLink = 'https://order.gingerbuffet.com/'
 
 export default class Home extends React.Component {
     
@@ -33,7 +31,7 @@ render() {
         </Helmet>
         <NavigationBar currentPage='home' order={this.state.order} toggleModal={() => this.toggleModal()}/>
           <div className='pagecontent'>
-          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+          <Button color='red' circular size='massive' href={orderLink} target="_blank">
                         <Icon name='food' />
                         Order Now!
             </Button>

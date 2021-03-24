@@ -123,7 +123,7 @@ export default class NavigationBar extends React.Component {
                                 <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
-                            <Menu.Item onClick={() => this.toggleModal()} active={this.props.currentPage === 'order'}>
+            <Menu.Item href={orderLink} target="_blank" active={this.props.currentPage === 'order'}>
                                 <Icon name='food' />
                         Order Online
             </Menu.Item>
@@ -188,7 +188,7 @@ export default class NavigationBar extends React.Component {
                                     <Icon name='utensil spoon' />
                                     <div className='dropdown-menu-bigger'>Menu </div>
                         </Menu.Item>
-                                <Menu.Item onClick={() => this.toggleModal()} active={this.props.currentPage === 'order'}>
+                        <Menu.Item href={orderLink} target="_blank" active={this.props.currentPage === 'order'}>
                                     <Icon name='food' />
                                     <div className='dropdown-menu-bigger'>Order Online </div>
             </Menu.Item>

@@ -10,6 +10,7 @@ import Footer from '../../components/Footer'
 const mapAPIURL = 'https://www.google.com/maps/embed/v1/place?key='
 const API_KEY = 'AIzaSyBmMpPd3_6YCY_VlIliOMPfmTazVa3-ahE'
 const locationQuery = '&q=Ginger+Buffet,Fairview+Heights+IL'
+const orderLink = 'https://order.gingerbuffet.com/'
 
 // const lunchPrice = '$8.29';
 // const dinnerPrice = '$11.29';
@@ -17,9 +18,6 @@ const locationQuery = '&q=Ginger+Buffet,Fairview+Heights+IL'
 const lunchPrice = '';
 const dinnerPrice = '';
 const weekendPrice = '';
-/**
- * TODO: Add Content related to our restaurant such as Pricing for Buffet, Address, Hours, Map Location
- */
 
 export default class Location extends React.Component {
 
@@ -136,7 +134,7 @@ export default class Location extends React.Component {
         </Helmet>
         <NavigationBar currentPage='location' order={this.state.order} toggleModal={() => this.toggleModal()}/>
           <div className='pagecontent'>
-          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+          <Button color='red' circular size='massive' href={orderLink} target="_blank">
                         <Icon name='food' />
                         Order Now!
             </Button>

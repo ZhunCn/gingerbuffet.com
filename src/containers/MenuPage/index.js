@@ -11,10 +11,8 @@ import menuPDF from '../../assets/ginger-menu.pdf';
 // import expressSushi from '../../assets/ginger-express-menu-sushi.jpg';
 // import expressPDF from '../../assets/ginger-express-menu-sushi.pdf';
 
-/**
- * TODO: Add Take-out/Carry-out Menu with Prices, extracting the information on a csv/xml/json file.
- * Preferably with a Tabbed View on a Grid.
- */
+const orderLink = 'https://order.gingerbuffet.com/'
+
 
 export default class Menu extends React.Component {
 
@@ -63,7 +61,7 @@ export default class Menu extends React.Component {
 
         <NavigationBar currentPage='menu' order={this.state.order} toggleModal={() => this.toggleModal()}/>
           <div className='pagecontent'>
-          <Button color='red' circular size='massive' onClick={() => this.toggleModal()}>
+          <Button color='red' circular size='massive' href={orderLink} target="_blank">
                         <Icon name='food' />
                         Order Now!
             </Button>

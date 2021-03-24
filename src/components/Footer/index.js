@@ -42,9 +42,6 @@ export default class Footer extends React.Component {
                     <Menu.Item as={Link} to={'/menu'} disabled={this.props.currentPage === 'menu'}>
                         Menu
             </Menu.Item>
-            <Menu.Item as={Link} to={'/order'} disabled={this.props.currentPage === 'order'}>
-                        Order
-            </Menu.Item>
                     <Menu.Item as={Link} to={'/location'} disabled={this.props.currentPage === 'location'}>
                         Location
             </Menu.Item>
