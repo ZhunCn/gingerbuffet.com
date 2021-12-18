@@ -34,7 +34,6 @@ export default class HolidayMessage extends React.Component {
 
   componentDidMount() {
     if (!this.state.request) {
-      let holidayString = "";
       let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
       let currDate = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
