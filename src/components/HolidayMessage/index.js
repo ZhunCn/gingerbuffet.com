@@ -3,7 +3,7 @@ import { Message, Grid, Image } from 'semantic-ui-react';
 import Holidays from 'date-holidays';
 import coupons from '../../assets/ginger-coupons-Jan2021.png'
 
-const holidayPricing = '$12.99';
+//const holidayPricing = '$12.99';
 const holidaysCelebrated = [
   "New Year's Day",
   "Valentine's Day",
@@ -24,8 +24,8 @@ export default class HolidayMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      holiday: null,
-      date: null,
+      holiday_list: null,
+      date_list: null,
       request: false
     }
   }
@@ -35,7 +35,8 @@ export default class HolidayMessage extends React.Component {
   componentDidMount() {
     if (!this.state.request) {
       let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
+      let holiday_list = [];
+      let date_list = [];
       let currDate = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
       currDate = new Date(currDate);
 
@@ -68,28 +69,29 @@ export default class HolidayMessage extends React.Component {
       let arr = hd.getHolidays(currDate.getFullYear());
       for (let i = 0; i < arr.length; i++) {
         if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {
-          this.setState({
-            holiday: arr[i].name,
-            date: dates[datesStr.indexOf(arr[i].date.substring(0,10))],
-            request: true
-          });
-          return;
+          holiday_list.push(arr[i].name);
+          date_list.push(dates[datesStr.indexOf(arr[i].date.substring(0,10))]);
         }
       }
       if (currDate.getFullYear() !== currYear) {
         arr = hd.getHolidays(currYear);
         for (let i = 0; i < arr.length; i++) {
           if (datesStr.includes(arr[i].date.substring(0,10)) && holidaysCelebrated.includes(arr[i].name)) {
-            this.setState({
-              holiday: arr[i].name,
-              date: dates[datesStr.indexOf(arr[i].date.substring(0,10))],
-              request: true
-            });
-            return;
+            holiday_list.push(arr[i].name);
+            date_list.push(dates[datesStr.indexOf(arr[i].date.substring(0,10))]);
+            
           }
         }
       }
 
+      if (holiday_list.length > 0) {
+        this.setState({
+          holiday_list: holiday_list,
+          date_list: date_list,
+          request: true
+        });
+      }
+      
     }
   }
 
@@ -122,39 +124,49 @@ export default class HolidayMessage extends React.Component {
         </div>
       );
     }
-    if (!this.state.holiday) {
+    if (!this.state.holiday_list) {
       return (
         <div />
       )
     }
-    if (holidaysClosed.includes(this.state.holiday)) {
+    if (this.state.holiday_list.includes(holidaysClosed[0])) {
       return (
         <Message color='violet'
         >
           <Message.Content>
             <Message.Header>
-              {this.state.holiday} Holiday Closing
+              {this.state.holiday_list[0]} Holiday Closing
               </Message.Header>
             <p>
-              Happy {this.state.holiday}! We will be closed for the season on {this.state.date.toLocaleString().substring(0, this.state.date.toLocaleString().indexOf(','))}!
+              Happy {this.state.holiday_list[0]}! We will be closed for the season on {this.state.date_list[0].toLocaleString().substring(0, this.state.date_list[0].toLocaleString().indexOf(','))}!
               </p>
           </Message.Content>
         </Message>
   
       );
     }
+    let header = "";
+    let message = "";
+
+    if (this.state.holiday_list.includes(holidaysCelebrated[0]) || this.state.holiday_list.includes(holidaysCelebrated[6])) {
+      header = "Happy Christmas and New Years Day!";
+      message = "Happy holidays! We will be open on December 24th, 25th, 31st, and January 1st.";
+    } else {
+      header = "Happy " + this.state.holiday_list[0] + "!";
+      message = "Happy holidays! We will be open on " + this.state.date_list[0].toLocaleString().substring(0, this.state.date_list[0].toLocaleString().indexOf(',')) + ".";
+    }
+
     return (
       <Message color='violet'
       >
         <Message.Content>
           <Message.Header>
-            {this.state.holiday} Holiday Special
+            {header}
             </Message.Header>
           <p>
-            Happy {this.state.holiday}! On {this.state.date.toLocaleString().substring(0, this.state.date.toLocaleString().indexOf(','))}
-            , We are hosting a special all-day holiday buffet for <b>{holidayPricing}</b>!
+            {message}
             </p>
-        </Message.Content>
+        </Message.Content>  
       </Message>
 
     );
