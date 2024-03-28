@@ -48,7 +48,7 @@ render() {
         fontWeight: "normal",
         marginBottom: 0,
         marginTop:  "2.5em",
-        'text-shadow': '2px 2px black'
+        'textShadow': '2px 2px black'
       }}
     />
           </div>

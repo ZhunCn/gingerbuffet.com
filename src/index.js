@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'fomantic-ui-css/semantic.css';
@@ -19,9 +19,10 @@ const prerenderedLoadable = dynamicImport => {
 const App = prerenderedLoadable(() => import("./components/App"));
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-    ReactDOM.hydrate(<App />, rootElement);
+    hydrateRoot(rootElement, <App />);
 } else {
-    ReactDOM.render(<App />, rootElement);
+    let root = createRoot(rootElement);
+    root.render(<App />)
 }
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

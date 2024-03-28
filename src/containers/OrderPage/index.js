@@ -1,11 +1,25 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
-import { Responsive, Segment, Header, Image, Button, Icon, Grid } from 'semantic-ui-react';
+import { Segment, Header, Image, Button, Icon, Grid } from 'semantic-ui-react';
+import { createMedia } from "@artsy/fresnel";
 import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
 import grubhub from '../../assets/grubhub.png'
+
+const AppMedia = createMedia({
+  breakpoints: {
+    mobile: 320,
+    tablet: 768,
+    computer: 992,
+    largeScreen: 1200,
+    widescreen: 1920
+  }
+});
+
+const mediaStyles = AppMedia.createMediaStyle();
+const { Media, MediaContextProvider } = AppMedia;
 
 const orderLink = 'https://order.gingerbuffet.com/'
 
@@ -35,9 +49,8 @@ export default class Order extends React.Component {
 
               <Segment.Inline>
               <center>
-                <Responsive
-                  minWidth={Responsive.onlyTablet.minWidth}>
-                  <Grid columns={5} padded >
+                
+                  <Grid as={Media} greaterThanOrEqual="tablet" columns={5} padded >
                     <Grid.Row>
                       <Grid.Column />
                       <Grid.Column floated='right'>
@@ -55,12 +68,9 @@ export default class Order extends React.Component {
                       <Grid.Column />
                     </Grid.Row>
                   </Grid>
-                </Responsive>
 
                
-                  <Responsive
-                    {...Responsive.onlyMobile}>
-                    <Grid columns={1} >
+                    <Grid as={Media} at="mobile" columns={1} >
                       <Grid.Row>
                         <Grid.Column>
                           <Button circular size='massive' href={orderLink} color='orange'>
@@ -79,8 +89,7 @@ export default class Order extends React.Component {
                           <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
                         </Grid.Column>
                       </Grid.Row>
-                    </Grid>
-                  </Responsive></center>
+                    </Grid></center>
               </Segment.Inline>
             </Segment>
 

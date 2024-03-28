@@ -1,9 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Responsive, Icon, Image, Menu, Transition, Modal, Button, Grid } from 'semantic-ui-react';
+import { Icon, Image, Menu, Transition, Modal, Button, Grid } from 'semantic-ui-react';
+import { createMedia } from "@artsy/fresnel";
 import './index.css';
 import logo from '../../assets/gingerlogo-outline.png'
 import grubhub from '../../assets/grubhub.png'
+
+const AppMedia = createMedia({
+    breakpoints: {
+      mobile: 320,
+      tablet: 768,
+      computer: 992,
+      largeScreen: 1200,
+      widescreen: 1920
+    }
+  });
+  
+  const mediaStyles = AppMedia.createMediaStyle();
+  const { Media, MediaContextProvider } = AppMedia;
+  
 const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
 const orderLink = 'https://order.gingerbuffet.com/'
@@ -50,9 +65,7 @@ export default class NavigationBar extends React.Component {
             </Modal.Content>
             <Modal.Actions>
                 <center>
-                    <Responsive
-                        minWidth={Responsive.onlyTablet.minWidth}>
-                        <Grid columns={5} padded >
+                        <Grid as={Media} greaterThanOrEqual="tablet" columns={5} padded >
                             <Grid.Row>
                                 <Grid.Column />
                                 <Grid.Column floated='right'>
@@ -70,11 +83,8 @@ export default class NavigationBar extends React.Component {
                                 <Grid.Column />
                             </Grid.Row>
                         </Grid>
-                    </Responsive>
 
-                    <Responsive
-                        {...Responsive.onlyMobile}>
-                        <Grid columns={1} >
+                        <Grid as={Media} at="mobile" columns={1} >
                             <Grid.Row>
                                 <Grid.Column>
                                     <Button circular size='massive' href={orderLink} color='orange'>
@@ -94,7 +104,6 @@ export default class NavigationBar extends React.Component {
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
-                    </Responsive>
                 </center>
             </Modal.Actions>
         </Modal>;
@@ -102,9 +111,9 @@ export default class NavigationBar extends React.Component {
         return (
             <div>
                 <div className='navbar-bg'>
-                    <Responsive
-                        as={Menu}
-                        minWidth={Responsive.onlyTablet.minWidth}
+                    <Menu
+                        as={Media}
+                        greaterThanOrEqual="tablet"
                         fluid
                         inverted
                         pointing
@@ -128,7 +137,7 @@ export default class NavigationBar extends React.Component {
                         Order Online
             </Menu.Item>
                             <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
-                                <Icon name='map marked alternate' />
+                                <Icon name='map marker alternate' />
                         Location and Buffet Hours
             </Menu.Item>
                             <Menu.Item href={fbPageLink} target="_blank">
@@ -142,10 +151,8 @@ export default class NavigationBar extends React.Component {
                             </Menu.Item>
                         </Menu.Menu>
 
-                    </Responsive>
-                    <Responsive
-                        {...Responsive.onlyMobile}
-                    >
+                    </Menu>
+                    <Media at="mobile">
                         
                          <center>   
                         <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo}></Image>
@@ -202,7 +209,7 @@ export default class NavigationBar extends React.Component {
                         </Menu.Item>
                             </Menu>}
                         </Transition.Group>
-                    </Responsive>
+                    </Media>
                 </div>
                 {modal}
             </div>
