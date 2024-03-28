@@ -1,10 +1,10 @@
+'use client'
 import React from 'react';
-import NavigationBar from '../../components/NavigationBar'
-import HolidayMessage from '../../components/HolidayMessage'
+import NavigationBar from '../components/NavigationBar'
+import HolidayMessage from '../components/HolidayMessage'
 import { Header, Button, Icon } from 'semantic-ui-react'
-import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
-import Footer from '../../components/Footer'
+import Footer from '../components/Footer'
 
 const orderLink = 'https://order.gingerbuffet.com/'
 

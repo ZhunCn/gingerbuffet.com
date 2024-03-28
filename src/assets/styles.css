@@ -10,7 +10,7 @@
 }
 
 .deskBackground {
-  background-image: url('building_front.jpg') !important;
+  background-image: url('../../public/building_front.jpg') !important;
   background-size: cover !important;
   min-height: 100vh;
 }

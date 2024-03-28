@@ -1,9 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Responsive, Icon, Image, Menu, Transition, Modal, Button, Grid } from 'semantic-ui-react';
+import { Link } from 'next/link';
+import { Icon, Image, Menu, Transition, Modal, Button, Grid } from 'semantic-ui-react';
+import { createMedia } from "@artsy/fresnel";
 import './index.css';
-import logo from '../../assets/gingerlogo-outline.png'
-import grubhub from '../../assets/grubhub.png'
+import logo from '../../../public/gingerlogo-outline.png'
+import grubhub from '../../../public/grubhub.png'
+
+const AppMedia = createMedia({
+    breakpoints: {
+      mobile: 320,
+      tablet: 768,
+      computer: 992,
+      largeScreen: 1200,
+      widescreen: 1920
+    }
+  });
+  
+  const mediaStyles = AppMedia.createMediaStyle();
+  const { Media, MediaContextProvider } = AppMedia;
+
 const fbPageLink = 'https://www.facebook.com/GingerBuffet';
 
 const orderLink = 'https://order.gingerbuffet.com/'
@@ -50,9 +65,7 @@ export default class NavigationBar extends React.Component {
             </Modal.Content>
             <Modal.Actions>
                 <center>
-                    <Responsive
-                        minWidth={Responsive.onlyTablet.minWidth}>
-                        <Grid columns={5} padded >
+                <Grid as={Media} greaterThanOrEqual="tablet" columns={5} padded >
                             <Grid.Row>
                                 <Grid.Column />
                                 <Grid.Column floated='right'>
@@ -70,11 +83,8 @@ export default class NavigationBar extends React.Component {
                                 <Grid.Column />
                             </Grid.Row>
                         </Grid>
-                    </Responsive>
 
-                    <Responsive
-                        {...Responsive.onlyMobile}>
-                        <Grid columns={1} >
+                        <Grid as={Media} at="mobile" columns={1} >
                             <Grid.Row>
                                 <Grid.Column>
                                     <Button circular size='massive' href={orderLink} color='orange'>
@@ -94,32 +104,33 @@ export default class NavigationBar extends React.Component {
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
-                    </Responsive>
                 </center>
             </Modal.Actions>
         </Modal>;
 
         return (
             <div>
+                <style>{mediaStyles}</style>
+                <MediaContextProvider>
                 <div className='navbar-bg'>
-                    <Responsive
-                        as={Menu}
-                        minWidth={Responsive.onlyTablet.minWidth}
+                    <Menu
+                        as={Media}
+                        greaterThanOrEqual="tablet"
                         fluid
                         inverted
                         pointing
                         secondary
                         className='navbar-menu'
                     >
-                        <Menu.Item as={Link} to={'/'}>
-                            <Image size='small' src={logo}></Image>
+                        <Menu.Item as={Link} href='/'>
+                            <Image size='small' src={logo.src}></Image>
                         </Menu.Item>
                         <Menu.Menu >
-                            <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
+                            <Menu.Item as={Link} href='/' active={this.props.currentPage === 'home'}>
                                 <Icon name='home' />
                         Home
             </Menu.Item>
-                            <Menu.Item as={Link} to={'/menu'} active={this.props.currentPage === 'menu'}>
+                            <Menu.Item as={Link} href='/menu' active={this.props.currentPage === 'menu'}>
                                 <Icon name='utensil spoon' />
                         Menu
             </Menu.Item>
@@ -127,7 +138,7 @@ export default class NavigationBar extends React.Component {
                                 <Icon name='food' />
                         Order Online
             </Menu.Item>
-                            <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
+                            <Menu.Item as={Link} href='/location' active={this.props.currentPage === 'location'}>
                                 <Icon name='map marked alternate' />
                         Location and Buffet Hours
             </Menu.Item>
@@ -142,13 +153,10 @@ export default class NavigationBar extends React.Component {
                             </Menu.Item>
                         </Menu.Menu>
 
-                    </Responsive>
-                    <Responsive
-                        {...Responsive.onlyMobile}
-                    >
-                        
+                   </Menu>
+                    <Media at="mobile">
                          <center>   
-                        <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo}></Image>
+                        <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo.src}></Image>
                         </center>
 
                         <Menu
@@ -180,11 +188,11 @@ export default class NavigationBar extends React.Component {
                                 stackable>
 
 
-                                <Menu.Item as={Link} to={'/'} active={this.props.currentPage === 'home'}>
+                                <Menu.Item as={Link} href='/' active={this.props.currentPage === 'home'}>
                                     <Icon name='home' />
                             <div className='dropdown-menu-bigger'>Home</div>
                         </Menu.Item>
-                                <Menu.Item as={Link} to={'/menu'} active={this.props.currentPage === 'menu'}>
+                                <Menu.Item as={Link} href='/menu' active={this.props.currentPage === 'menu'}>
                                     <Icon name='utensil spoon' />
                                     <div className='dropdown-menu-bigger'>Menu </div>
                         </Menu.Item>
@@ -192,7 +200,7 @@ export default class NavigationBar extends React.Component {
                                     <Icon name='food' />
                                     <div className='dropdown-menu-bigger'>Order Online </div>
             </Menu.Item>
-                                <Menu.Item as={Link} to={'/location'} active={this.props.currentPage === 'location'}>
+                                <Menu.Item as={Link} href='/location' active={this.props.currentPage === 'location'}>
                                     <Icon name='map marked alternate' />
                                     <div className='dropdown-menu-bigger'>Location and Buffet Hours </div>
                         </Menu.Item>
@@ -202,9 +210,10 @@ export default class NavigationBar extends React.Component {
                         </Menu.Item>
                             </Menu>}
                         </Transition.Group>
-                    </Responsive>
+                        </Media>
                 </div>
                 {modal}
+                </MediaContextProvider>
             </div>
         );
     }

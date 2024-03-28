@@ -1,6 +1,6 @@
+'use client'
 import React from 'react';
-import NavigationBar from '../../components/NavigationBar'
-import '../../assets/styles.css';
+import NavigationBar from '../components/NavigationBar'
 import { Segment } from 'semantic-ui-react'
 import { Helmet } from 'react-helmet';
 

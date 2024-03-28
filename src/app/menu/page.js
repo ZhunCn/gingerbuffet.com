@@ -1,13 +1,13 @@
+'use client'
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import { Image, Button, Icon } from 'semantic-ui-react';
-import '../../assets/styles.css';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer';
-import menuTop from '../../assets/ginger-menu-top.jpg';
-import menuBottom from '../../assets/ginger-menu-bottom.jpg';
-import menuPDF from '../../assets/ginger-menu.pdf';
+import menuTop from '../../../public/ginger-menu-top.jpg';
+import menuBottom from '../../../public/ginger-menu-bottom.jpg';
+// import menuPdf from '../../../public/ginger-menu.pdf';
 // import expressSushi from '../../assets/ginger-express-menu-sushi.jpg';
 // import expressPDF from '../../assets/ginger-express-menu-sushi.pdf';
 
@@ -31,11 +31,11 @@ export default class Menu extends React.Component {
   
   render() {
     // eslint-disable-next-line
-    const standardMenu = <div><Button color='black' href={menuPDF}>PDF version</Button> <br/><br/>
+    const standardMenu = <div><Button color='black' href={'ginger-menu.pdf'}>PDF version</Button> <br/><br/>
       <Image.Group className='menu-pics'>
-      <Image src={menuTop} fluid />
+      <Image src={menuTop.src} fluid />
       <br />
-      <Image src={menuBottom} fluid />
+      <Image src={menuBottom.src} fluid />
     </Image.Group></div>;
 
     //   const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>

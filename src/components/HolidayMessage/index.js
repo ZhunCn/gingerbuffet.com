@@ -1,7 +1,7 @@
 import React from 'react';
 import { Message, Grid, Image } from 'semantic-ui-react';
 import Holidays from 'date-holidays';
-import coupons from '../../assets/ginger-coupons-Jan2021.png'
+import coupons from '../../../public/ginger-coupons-Jan2021.png'
 
 //const holidayPricing = '$12.99';
 const holidaysCelebrated = [

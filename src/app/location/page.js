@@ -1,11 +1,25 @@
+'use client'
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar'
 import HolidayMessage from '../../components/HolidayMessage'
 import Iframe from 'react-iframe';
-import { Divider, Grid, Segment, Header, Responsive, Button, Icon } from 'semantic-ui-react';
-import '../../assets/styles.css';
+import { Divider, Grid, Segment, Header, Button, Icon } from 'semantic-ui-react';
+import { createMedia } from "@artsy/fresnel";
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer'
+
+const AppMedia = createMedia({
+  breakpoints: {
+    mobile: 320,
+    tablet: 768,
+    computer: 992,
+    largeScreen: 1200,
+    widescreen: 1920
+  }
+});
+
+const mediaStyles = AppMedia.createMediaStyle();
+const { Media, MediaContextProvider } = AppMedia;
 
 const mapAPIURL = 'https://www.google.com/maps/embed/v1/place?key='
 const API_KEY = 'AIzaSyBmMpPd3_6YCY_VlIliOMPfmTazVa3-ahE'
@@ -80,9 +94,9 @@ export default class Location extends React.Component {
         <Header sub>Lunch Buffet: </Header>
         <b>{lunchPrice}</b>
         <Divider />
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+        <Media greaterThanOrEqual="tablet">
         <br/><br/>
-        </Responsive>
+        </Media>
         Monday - Friday <br /> 11:00 AM - 3:30 PM
           </Segment>
           
@@ -92,9 +106,9 @@ export default class Location extends React.Component {
            </Header>
         <b>{dinnerPrice} </b>
         <Divider />
-        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+        <Media greaterThanOrEqual="tablet">
         <br/><br/>
-        </Responsive>
+        </Media>
         Monday - Thursday <br /> 3:30 PM - 9:00 PM
           </Segment>
       <Segment>
@@ -132,6 +146,7 @@ export default class Location extends React.Component {
         <Helmet>
           <title>Location and Hours - Ginger Buffet & Grill</title>
         </Helmet>
+        <style>{mediaStyles}</style>
         <NavigationBar currentPage='location' order={this.state.order} toggleModal={() => this.toggleModal()}/>
           <div className='pagecontent'>
           <Button color='red' circular size='massive' href={orderLink} target="_blank">
@@ -141,10 +156,9 @@ export default class Location extends React.Component {
             <br/><br/>
           <HolidayMessage />
           <br/>
-          <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-
-
-            <Grid divided='vertically'>
+          
+          <MediaContextProvider>
+            <Grid as={Media} greaterThanOrEqual="tablet" divided='vertically'>
               <Grid.Row columns={2} stretched>
                 <Grid.Column stretched>
                   <Grid divided='vertically'>
@@ -164,16 +178,16 @@ export default class Location extends React.Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-          </Responsive>
 
-          <Responsive {...Responsive.onlyMobile} >
+          <Media at="mobile" >
             {businessAddress}
 
             {mapMobileIFrame}
             {bottomDetailsMobile}
             {businessHours}
             
-          </Responsive>
+          </Media>
+          </MediaContextProvider>
         </div>
 
         <Footer currentPage='location' />
@@ -181,4 +195,3 @@ export default class Location extends React.Component {
     );
   }
 }
-

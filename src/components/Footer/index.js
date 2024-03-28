@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'next/link';
 import { Menu } from 'semantic-ui-react';
 import './index.css';
 
@@ -36,13 +36,13 @@ export default class Footer extends React.Component {
                     className='footer'
                 >
 
-                    <Menu.Item as={Link} to={'/'} disabled={this.props.currentPage === 'home'}>
+                    <Menu.Item as={Link} href='/' disabled={this.props.currentPage === 'home'}>
                         Home
             </Menu.Item>
-                    <Menu.Item as={Link} to={'/menu'} disabled={this.props.currentPage === 'menu'}>
+                    <Menu.Item as={Link} href='/menu' disabled={this.props.currentPage === 'menu'}>
                         Menu
             </Menu.Item>
-                    <Menu.Item as={Link} to={'/location'} disabled={this.props.currentPage === 'location'}>
+                    <Menu.Item as={Link} href='/location' disabled={this.props.currentPage === 'location'}>
                         Location
             </Menu.Item>
 
