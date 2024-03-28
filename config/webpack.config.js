@@ -658,6 +658,7 @@ module.exports = function(webpackEnv) {
       url: require.resolve("url/"),
       stream: require.resolve("stream-browserify"),
       buffer: require.resolve("buffer"),
+      events: require.resolve("events/"),
       }
     },
     // Turn off performance processing because we utilize
