@@ -75,10 +75,10 @@ export default class NavigationBar extends React.Component {
                             </Button>
                                 </Grid.Column>
                                 <Grid.Column>
-                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg' alt='Button to redirect to DoorDash order page'></Image>
                                 </Grid.Column>
                                 <Grid.Column>
-                                    <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
+                                    <Image size='medium' href={deliveryLink2} src={grubhub} alt='Button to redirect to GrubHub order page'></Image>
                                 </Grid.Column>
                                 <Grid.Column />
                             </Grid.Row>
@@ -95,12 +95,12 @@ export default class NavigationBar extends React.Component {
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column>
-                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg'></Image>
+                                    <Image size='medium' href={deliveryLink} src='https://cdn.doordash.com/media/button/button_red_l.svg' alt='Button to redirect to DoorDash order page'></Image>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row>
                                 <Grid.Column>
-                                    <Image size='medium' href={deliveryLink2} src={grubhub}></Image>
+                                    <Image size='medium' href={deliveryLink2} src={grubhub} alt='Button to redirect to GrubHub order page'></Image>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
@@ -123,7 +123,7 @@ export default class NavigationBar extends React.Component {
                         className='navbar-menu'
                     >
                         <Menu.Item as={Link} href='/'>
-                            <Image size='small' src={logo.src}></Image>
+                            <Image size='small' src={logo.src} alt='Ginger Buffet company logo'></Image>
                         </Menu.Item>
                         <Menu.Menu >
                             <Menu.Item as={Link} href='/' active={this.props.currentPage === 'home'}>
@@ -156,7 +156,7 @@ export default class NavigationBar extends React.Component {
                    </Menu>
                     <Media at="mobile">
                          <center>   
-                        <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo.src}></Image>
+                        <Image className='.navbar-item-center' as={Link} to={'/'} size='medium' src={logo.src} alt='Ginger Buffet company logo'></Image>
                         </center>
 
                         <Menu

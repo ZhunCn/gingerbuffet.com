@@ -115,7 +115,7 @@ export default class HolidayMessage extends React.Component {
           </Grid.Row>
           {false && <Grid.Row>
             <Grid.Column>
-              <center><Image size='medium' src={coupons} /> </center>
+              <center><Image size='medium' src={coupons} alt='Current Coupon promotion'/> </center>
             </Grid.Column>
           </Grid.Row>}
 

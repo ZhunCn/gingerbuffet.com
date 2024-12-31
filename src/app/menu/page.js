@@ -33,9 +33,9 @@ export default class Menu extends React.Component {
     // eslint-disable-next-line
     const standardMenu = <div><Button color='black' href={'ginger-menu.pdf'}>PDF version</Button> <br/><br/>
       <Image.Group className='menu-pics'>
-      <Image src={menuTop.src} fluid />
+      <Image src={menuTop.src} fluid alt='Top portion of the menu image'/>
       <br />
-      <Image src={menuBottom.src} fluid />
+      <Image src={menuBottom.src} fluid alt='Bottom portion of the menu image'/>
     </Image.Group></div>;
 
     //   const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
