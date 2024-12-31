@@ -79,7 +79,7 @@ export default class Location extends React.Component {
       <Segment>
         <Header>
           Business Hours
-      </Header>
+        </Header>
         <Divider />
 
         <p><Header sub>Sunday - Thursday </Header>
@@ -95,22 +95,22 @@ export default class Location extends React.Component {
         <b>{lunchPrice}</b>
         <Divider />
         <Media greaterThanOrEqual="tablet">
-        <br/><br/>
+          <br /><br />
         </Media>
         Monday - Friday <br /> 11:00 AM - 3:30 PM
-          </Segment>
-          
+      </Segment>
+
       <Segment>
         <Header sub>Dinner Buffet:
 
-           </Header>
+        </Header>
         <b>{dinnerPrice} </b>
         <Divider />
         <Media greaterThanOrEqual="tablet">
-        <br/><br/>
+          <br /><br />
         </Media>
         Monday - Thursday <br /> 3:30 PM - 9:00 PM
-          </Segment>
+      </Segment>
       <Segment>
         <Header sub>Weekend Buffet: </Header>
         <b>{weekendPrice} </b>
@@ -119,8 +119,8 @@ export default class Location extends React.Component {
         Friday <br /> 3:30 PM - 9:30 PM <br />
         Saturday <br /> 11:00 AM - 9:30 PM <br />
         Sunday <br /> 11:00 AM - 9:00 PM
-          </Segment></>;
-    
+      </Segment></>;
+
     const bottomDetailsDesktop = <Segment>
       <Header>
         Buffet Hours
@@ -135,8 +135,8 @@ export default class Location extends React.Component {
       <Header>
         Buffet Hours
       </Header>
-        {bottomDetails}
-        <b>Senior, Active Military, and Children Buffet<br/> Dine-in Discount Available.<br/><hr/>Senior Special Day on Wednesdays.</b>
+      {bottomDetails}
+      <b>Senior, Active Military, and Children Buffet<br /> Dine-in Discount Available.<br /><hr />Senior Special Day on Wednesdays.</b>
     </Segment>;
 
 
@@ -147,16 +147,16 @@ export default class Location extends React.Component {
           <title>Location and Hours - Ginger Buffet & Grill</title>
         </Helmet>
         <style>{mediaStyles}</style>
-        <NavigationBar currentPage='location' order={this.state.order} toggleModal={() => this.toggleModal()}/>
-          <div className='pagecontent'>
+        <NavigationBar currentPage='location' order={this.state.order} toggleModal={() => this.toggleModal()} />
+        <div className='pagecontent'>
           <Button color='red' circular size='massive' href={orderLink} target="_blank">
-                        <Icon name='food' />
-                        Order Now!
-            </Button>
-            <br/><br/>
+            <Icon name='food' />
+            Order Now!
+          </Button>
+          <br /><br />
           <HolidayMessage />
-          <br/>
-          
+          <br />
+
           <MediaContextProvider>
             <Grid as={Media} greaterThanOrEqual="tablet" divided='vertically'>
               <Grid.Row columns={2} stretched>
@@ -179,14 +179,13 @@ export default class Location extends React.Component {
               </Grid.Row>
             </Grid>
 
-          <Media at="mobile" >
-            {businessAddress}
+            <Media at="mobile" >
+              {businessAddress}
+              {mapMobileIFrame}
+              {bottomDetailsMobile}
+              {businessHours}
 
-            {mapMobileIFrame}
-            {bottomDetailsMobile}
-            {businessHours}
-            
-          </Media>
+            </Media>
           </MediaContextProvider>
         </div>
 

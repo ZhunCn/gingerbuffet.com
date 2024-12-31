@@ -28,15 +28,15 @@ export default class Menu extends React.Component {
       order: !this.state.order
     })
   }
-  
+
   render() {
     // eslint-disable-next-line
-    const standardMenu = <div><Button color='black' href={'ginger-menu.pdf'}>PDF version</Button> <br/><br/>
+    const standardMenu = <div><Button color='black' href={'ginger-menu.pdf'}>PDF version</Button> <br /><br />
       <Image.Group className='menu-pics'>
-      <Image src={menuTop.src} fluid alt='Top portion of the menu image'/>
-      <br />
-      <Image src={menuBottom.src} fluid alt='Bottom portion of the menu image'/>
-    </Image.Group></div>;
+        <Image src={menuTop.src} fluid alt='Top portion of the menu image' />
+        <br />
+        <Image src={menuBottom.src} fluid alt='Bottom portion of the menu image' />
+      </Image.Group></div>;
 
     //   const expressMenu = <div><Button basic color='black' href={expressPDF}>PDF version</Button>
     //   <Image.Group className='menu-pics'>
@@ -59,15 +59,15 @@ export default class Menu extends React.Component {
           <title>Menu - Ginger Buffet & Grill</title>
         </Helmet>
 
-        <NavigationBar currentPage='menu' order={this.state.order} toggleModal={() => this.toggleModal()}/>
-          <div className='pagecontent'>
+        <NavigationBar currentPage='menu' order={this.state.order} toggleModal={() => this.toggleModal()} />
+        <div className='pagecontent'>
           <Button color='red' circular size='massive' href={orderLink} target="_blank">
-                        <Icon name='food' />
-                        Order Now!
-            </Button>
-            <br/><br/>
+            <Icon name='food' />
+            Order Now!
+          </Button>
+          <br /><br />
           <HolidayMessage />
-          <br/>
+          <br />
           {standardMenu}
 
 
